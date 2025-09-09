@@ -645,12 +645,37 @@
             <p style="margin-top: 15px; padding: 15px; background: rgba(255, 193, 7, 0.1); border-radius: 8px; border-left: 4px solid #ffc107; font-size: 0.9rem;">
                 <strong>⚠️ DISCLAIMER:</strong> This platform is currently a conceptual showcase demonstrating potential Bitcoin services and applications. No services are currently operational, no partnerships exist, and no funding has been secured. This is a vision presentation of what could be built in the Bitcoin ecosystem.
             </p>
-        </div>
-        
-        <!-- Portfolio purchase banner will be injected by global-banners.js -->
     </footer>
     
-    <script src="global-banners.js"></script>
+    <script>
+        // Domain-specific routing
+        const hostname = window.location.hostname;
+        const domainRoutes = {
+            'btcsa.cc': '/cc/',
+            'btcsa.email': '/email/',
+            'btcsa.info': '/info/',
+            'btcsa.life': '/life/',
+            'btcsa.me': '/me/',
+            'btcsa.biz': '/biz/',
+            'btcsa.world': '/world/',
+            'btcsa.vip': '/vip/',
+            'btcsa.services': '/services/',
+            'btcsa.agency': '/agency/',
+            'btcsa.shop': '/shop/',
+            'btcsa.store': '/store/',
+            'btcsa.online': '/online/',
+            'btcsa.pro': '/pro/',
+            'btcsa.club': '/club/',
+            'btcsa.art': '/art/',
+            'btcsa.xyz': '/xyz/'
+        };
+        
+        // Only redirect if we're on a BTCSA domain and at the root path
+        if (domainRoutes[hostname] && window.location.pathname === '/') {
+            window.location.replace(domainRoutes[hostname]);
+        }
+    </script>
     <script src="script.js"></script>
+    <script src="global-banners.js"></script>
 </body>
 </html>
