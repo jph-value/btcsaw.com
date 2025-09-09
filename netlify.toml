@@ -136,206 +136,103 @@
   from = "/cc"
   to = "/cc/index.html"
   status = 200
-  host = "btcsaw.com"
+  conditions = {Host = ["btcsaw.com"]}
 
 [[redirects]]
   from = "/email"
   to = "/email/index.html"
   status = 200
-  host = "btcsaw.com"
+  conditions = {Host = ["btcsaw.com"]}
 
 [[redirects]]
   from = "/info"
   to = "/info/index.html"
   status = 200
-  host = "btcsaw.com"
+  conditions = {Host = ["btcsaw.com"]}
 
 [[redirects]]
   from = "/life"
   to = "/life/index.html"
   status = 200
-  host = "btcsaw.com"
+  conditions = {Host = ["btcsaw.com"]}
 
 [[redirects]]
   from = "/me"
   to = "/me/index.html"
   status = 200
-  host = "btcsaw.com"
+  conditions = {Host = ["btcsaw.com"]}
 
 [[redirects]]
   from = "/biz"
   to = "/biz/index.html"
   status = 200
-  host = "btcsaw.com"
+  conditions = {Host = ["btcsaw.com"]}
 
 [[redirects]]
   from = "/world"
   to = "/world/index.html"
   status = 200
-  host = "btcsaw.com"
+  conditions = {Host = ["btcsaw.com"]}
 
 [[redirects]]
   from = "/vip"
   to = "/vip/index.html"
   status = 200
-  host = "btcsaw.com"
+  conditions = {Host = ["btcsaw.com"]}
 
 [[redirects]]
   from = "/services"
   to = "/services/index.html"
   status = 200
-  host = "btcsaw.com"
+  conditions = {Host = ["btcsaw.com"]}
 
 [[redirects]]
   from = "/agency"
   to = "/agency/index.html"
   status = 200
-  host = "btcsaw.com"
+  conditions = {Host = ["btcsaw.com"]}
 
 [[redirects]]
   from = "/shop"
   to = "/shop/index.html"
   status = 200
-  host = "btcsaw.com"
+  conditions = {Host = ["btcsaw.com"]}
 
 [[redirects]]
   from = "/store"
   to = "/store/index.html"
   status = 200
-  host = "btcsaw.com"
+  conditions = {Host = ["btcsaw.com"]}
 
 [[redirects]]
   from = "/online"
   to = "/online/index.html"
   status = 200
-  host = "btcsaw.com"
+  conditions = {Host = ["btcsaw.com"]}
 
 [[redirects]]
   from = "/pro"
   to = "/pro/index.html"
   status = 200
-  host = "btcsaw.com"
+  conditions = {Host = ["btcsaw.com"]}
 
 [[redirects]]
   from = "/club"
   to = "/club/index.html"
   status = 200
-  host = "btcsaw.com"
+  conditions = {Host = ["btcsaw.com"]}
 
 [[redirects]]
   from = "/art"
   to = "/art/index.html"
   status = 200
-  host = "btcsaw.com"
+  conditions = {Host = ["btcsaw.com"]}
 
 [[redirects]]
   from = "/xyz"
   to = "/xyz/index.html"
   status = 200
-  host = "btcsaw.com"
-
-# Subfolder redirects for main domain (btcsaw.com) only
-[[redirects]]
-  from = "/cc"
-  to = "/cc/index.html"
-  status = 200
-  host = "btcsaw.com"
-
-[[redirects]]
-  from = "/email"
-  to = "/email/index.html"
-  status = 200
-  host = "btcsaw.com"
-
-[[redirects]]
-  from = "/info"
-  to = "/info/index.html"
-  status = 200
-  host = "btcsaw.com"
-
-[[redirects]]
-  from = "/life"
-  to = "/life/index.html"
-  status = 200
-  host = "btcsaw.com"
-
-[[redirects]]
-  from = "/me"
-  to = "/me/index.html"
-  status = 200
-  host = "btcsaw.com"
-
-[[redirects]]
-  from = "/biz"
-  to = "/biz/index.html"
-  status = 200
-  host = "btcsaw.com"
-
-[[redirects]]
-  from = "/world"
-  to = "/world/index.html"
-  status = 200
-  host = "btcsaw.com"
-
-[[redirects]]
-  from = "/vip"
-  to = "/vip/index.html"
-  status = 200
-  host = "btcsaw.com"
-
-[[redirects]]
-  from = "/services"
-  to = "/services/index.html"
-  status = 200
-  host = "btcsaw.com"
-
-[[redirects]]
-  from = "/agency"
-  to = "/agency/index.html"
-  status = 200
-  host = "btcsaw.com"
-
-[[redirects]]
-  from = "/shop"
-  to = "/shop/index.html"
-  status = 200
-  host = "btcsaw.com"
-
-[[redirects]]
-  from = "/store"
-  to = "/store/index.html"
-  status = 200
-  host = "btcsaw.com"
-
-[[redirects]]
-  from = "/online"
-  to = "/online/index.html"
-  status = 200
-  host = "btcsaw.com"
-
-[[redirects]]
-  from = "/pro"
-  to = "/pro/index.html"
-  status = 200
-  host = "btcsaw.com"
-
-[[redirects]]
-  from = "/club"
-  to = "/club/index.html"
-  status = 200
-  host = "btcsaw.com"
-
-[[redirects]]
-  from = "/art"
-  to = "/art/index.html"
-  status = 200
-  host = "btcsaw.com"
-
-[[redirects]]
-  from = "/xyz"
-  to = "/xyz/index.html"
-  status = 200
-  host = "btcsaw.com"
+  conditions = {Host = ["btcsaw.com"]}
 
 [build.environment]
   NODE_VERSION = "18"
