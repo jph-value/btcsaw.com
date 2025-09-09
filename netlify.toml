@@ -14,113 +14,106 @@
 # Custom domain redirects for BTCSA subdomains
 # These will work when you configure DNS to point subdomains to Netlify
 
-# Main domain redirect (btcsaw.com -> main site)
-[[redirects]]
-  from = "https://btcsaw.com/*"
-  to = "https://btcsa-platform.netlify.app/:splat"
-  status = 301
-  force = true
-
-# BTCSA subdomain redirects
+# BTCSA domain routing - serve content directly without external redirects
 [[redirects]]
   from = "https://btcsa.cc/*"
-  to = "https://btcsa-platform.netlify.app/cc/:splat"
+  to = "/cc/:splat"
   status = 200
   force = true
 
 [[redirects]]
   from = "https://btcsa.email/*"
-  to = "https://btcsa-platform.netlify.app/email/:splat"
+  to = "/email/:splat"
   status = 200
   force = true
 
 [[redirects]]
   from = "https://btcsa.info/*"
-  to = "https://btcsa-platform.netlify.app/info/:splat"
+  to = "/info/:splat"
   status = 200
   force = true
 
 [[redirects]]
   from = "https://btcsa.life/*"
-  to = "https://btcsa-platform.netlify.app/life/:splat"
+  to = "/life/:splat"
   status = 200
   force = true
 
 [[redirects]]
   from = "https://btcsa.me/*"
-  to = "https://btcsa-platform.netlify.app/me/:splat"
+  to = "/me/:splat"
   status = 200
   force = true
 
 [[redirects]]
   from = "https://btcsa.biz/*"
-  to = "https://btcsa-platform.netlify.app/biz/:splat"
+  to = "/biz/:splat"
   status = 200
   force = true
 
 [[redirects]]
   from = "https://btcsa.world/*"
-  to = "https://btcsa-platform.netlify.app/world/:splat"
+  to = "/world/:splat"
   status = 200
   force = true
 
 [[redirects]]
   from = "https://btcsa.vip/*"
-  to = "https://btcsa-platform.netlify.app/vip/:splat"
+  to = "/vip/:splat"
   status = 200
   force = true
 
 [[redirects]]
   from = "https://btcsa.services/*"
-  to = "https://btcsa-platform.netlify.app/services/:splat"
+  to = "/services/:splat"
   status = 200
   force = true
 
 [[redirects]]
   from = "https://btcsa.agency/*"
-  to = "https://btcsa-platform.netlify.app/agency/:splat"
+  to = "/agency/:splat"
   status = 200
   force = true
 
 [[redirects]]
   from = "https://btcsa.shop/*"
-  to = "https://btcsa-platform.netlify.app/shop/:splat"
+  to = "/shop/:splat"
   status = 200
   force = true
 
 [[redirects]]
   from = "https://btcsa.store/*"
-  to = "https://btcsa-platform.netlify.app/store/:splat"
+  to = "/store/:splat"
   status = 200
   force = true
 
 [[redirects]]
   from = "https://btcsa.online/*"
-  to = "https://btcsa-platform.netlify.app/online/:splat"
+  to = "/online/:splat"
   status = 200
   force = true
 
 [[redirects]]
   from = "https://btcsa.pro/*"
-  to = "https://btcsa-platform.netlify.app/pro/:splat"
+  to = "/pro/:splat"
   status = 200
   force = true
 
 [[redirects]]
   from = "https://btcsa.club/*"
-  to = "https://btcsa-platform.netlify.app/club/:splat"
+  to = "/club/:splat"
   status = 200
   force = true
 
 [[redirects]]
   from = "https://btcsa.art/*"
-  to = "https://btcsa-platform.netlify.app/art/:splat"
+  to = "/art/:splat"
   status = 200
   force = true
 
 [[redirects]]
   from = "https://btcsa.xyz/*"
-  to = "https://btcsa-platform.netlify.app/xyz/:splat"
+  to = "/xyz/:splat"
   status = 200
   force = true
 
