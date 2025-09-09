@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BTCSA.CC - Bitcoin DEX | Ultra-Low Fee Swaps</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            color: white;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            padding: 20px 0;
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(20px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 28px;
+            font-weight: bold;
+            color: #f7931a;
+        }
+        
+        .bitcoin-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(45deg, #f7931a, #ffb347);
+            border-radius: 50%;
+            margin-right: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            padding: 8px 16px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            background: rgba(247, 147, 26, 0.2);
+        }
+        
+        .hero {
+            text-align: center;
+            padding: 80px 0;
+        }
+        
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, #f7931a, #ffb347);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hero .subtitle {
+            font-size: 1.5rem;
+            opacity: 0.8;
+            margin-bottom: 40px;
+        }
+        
+        .dex-container {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border-radius: 25px;
+            padding: 40px;
+            margin: 50px auto;
+            max-width: 600px;
+            border: 1px solid rgba(247, 147, 26, 0.3);
+        }
+        
+        .swap-interface {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .token-input {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .token-selector {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .token-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .token-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #f7931a, #ffb347);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+        
+        .token-dropdown {
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(247, 147, 26, 0.5);
+            border-radius: 8px;
+            padding: 8px 12px;
+            color: white;
+            cursor: pointer;
+        }
+        
+        .amount-input {
+            width: 100%;
+            background: transparent;
+            border: none;
+            color: white;
+            font-size: 24px;
+            outline: none;
+        }
+        
+        .amount-input::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+        
+        .balance {
+            text-align: right;
+            font-size: 14px;
+            opacity: 0.7;
+        }
+        
+        .swap-arrow {
+            align-self: center;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(45deg, #f7931a, #ffb347);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 24px;
+        }
+        
+        .swap-arrow:hover {
+            transform: rotate(180deg);
+        }
+        
+        .swap-button {
+            background: linear-gradient(45deg, #f7931a, #ffb347);
+            border: none;
+            border-radius: 15px;
+            padding: 20px;
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+        }
+        
+        .swap-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(247, 147, 26, 0.4);
+        }
+        
+        .swap-button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        
+        .swap-details {
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        
+        .detail-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        
+        .membership-section {
+            background: rgba(247, 147, 26, 0.1);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 50px 0;
+            text-align: center;
+        }
+        
+        .membership-tiers {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .tier-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 30px;
+            border: 1px solid rgba(247, 147, 26, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .tier-card:hover {
+            transform: translateY(-5px);
+            border-color: #f7931a;
+        }
+        
+        .tier-name {
+            font-size: 24px;
+            font-weight: bold;
+            color: #f7931a;
+            margin-bottom: 15px;
+        }
+        
+        .tier-fee {
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        
+        .tier-features {
+            list-style: none;
+            text-align: left;
+        }
+        
+        .tier-features li {
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .tier-features li:before {
+            content: "✓ ";
+            color: #f7931a;
+            font-weight: bold;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 60px 0;
+        }
+        
+        .feature-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .feature-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        
+        .price-chart {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 15px;
+            padding: 20px;
+            margin: 30px 0;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .chart-line {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            right: 20px;
+            height: 2px;
+            background: linear-gradient(90deg, #f7931a, #ffb347);
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+        
+        .floating-particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+        
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: #f7931a;
+            border-radius: 50%;
+            animation: float 8s infinite linear;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .dex-container { padding: 20px; }
+            .membership-tiers { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="floating-particles" id="particles"></div>
+    
+    <header>
+        <nav class="container">
+            <div class="logo">
+                <div class="bitcoin-icon">₿</div>
+                BTCSA.CC
+            </div>
+            <div class="nav-links">
+                <a href="/">← Back to Portfolio</a>
+                <a href="#swap">Swap</a>
+                <a href="#membership">Membership</a>
+                <a href="#features">Features</a>
+            </div>
+        </nav>
+    </header>
+    
+    <main class="container">
+        <section class="hero">
+            <h1>Bitcoin DEX</h1>
+            <p class="subtitle">Conceptual ultra-low fee Bitcoin swaps with institutional liquidity</p>
+            <div style="background: rgba(255, 193, 7, 0.1); border-left: 4px solid #ffc107; padding: 15px; margin: 20px 0; border-radius: 8px;">
+                <strong>⚠️ CONCEPT DEMO:</strong> This DEX interface is a demonstration only. No trading functionality exists, no liquidity is available, and no memberships are active. Contact: <strong>btcsaw@p-h.email</strong>
+            </div>
+        </section>
+        
+        <section id="swap" class="dex-container">
+            <div class="swap-interface">
+                <div class="token-input">
+                    <div class="token-selector">
+                        <div class="token-info">
+                            <div class="token-icon">₿</div>
+                            <select class="token-dropdown" id="fromToken">
+                                <option value="BTC">Bitcoin (BTC)</option>
+                                <option value="ETH">Ethereum (ETH)</option>
+                                <option value="LTC">Litecoin (LTC)</option>
+                                <option value="ADA">Cardano (ADA)</option>
+                            </select>
+                        </div>
+                        <div class="balance">Balance: <span id="fromBalance">0.00</span></div>
+                    </div>
+                    <input type="number" class="amount-input" id="fromAmount" placeholder="0.0" step="0.00000001">
+                </div>
+                
+                <div class="swap-arrow" onclick="swapTokens()">⇅</div>
+                
+                <div class="token-input">
+                    <div class="token-selector">
+                        <div class="token-info">
+                            <div class="token-icon">Ξ</div>
+                            <select class="token-dropdown" id="toToken">
+                                <option value="ETH">Ethereum (ETH)</option>
+                                <option value="BTC">Bitcoin (BTC)</option>
+                                <option value="LTC">Litecoin (LTC)</option>
+                                <option value="ADA">Cardano (ADA)</option>
+                            </select>
+                        </div>
+                        <div class="balance">Balance: <span id="toBalance">0.00</span></div>
+                    </div>
+                    <input type="number" class="amount-input" id="toAmount" placeholder="0.0" readonly>
+                </div>
+                
+                <div class="swap-details">
+                    <div class="detail-row">
+                        <span>Exchange Rate:</span>
+                        <span id="exchangeRate">Demo: 1 BTC = 15.42 ETH</span>
+                    </div>
+                    <div class="detail-row">
+                        <span>Network Fee:</span>
+                        <span id="networkFee">Demo: 0.001 BTC</span>
+                    </div>
+                    <div class="detail-row">
+                        <span>BTCSA Fee:</span>
+                        <span id="btcsaFee" style="color: #f7931a;">Demo: 0.05% (Concept Rate)</span>
+                    </div>
+                    <div class="detail-row">
+                        <span>You Receive:</span>
+                        <span id="finalAmount">~15.41 ETH</span>
+                    </div>
+                </div>
+                
+                <button class="swap-button" onclick="initiateSwap()">
+                    Connect Wallet to Swap
+                </button>
+            </div>
+            
+            <div class="price-chart">
+                <div class="chart-line"></div>
+                <div style="text-align: center;">
+                    <h3>BTC/ETH Price Chart</h3>
+                    <p style="opacity: 0.7;">Real-time market data</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="membership" class="membership-section">
+            <h2 style="font-size: 3rem; margin-bottom: 20px;">Membership Tiers</h2>
+            <p style="font-size: 1.2rem; opacity: 0.8;">Lower fees, exclusive features, and priority access</p>
+            
+            <div class="membership-tiers">
+                <div class="tier-card">
+                    <div class="tier-name">Standard</div>
+                    <div class="tier-fee">0.25%</div>
+                    <ul class="tier-features">
+                        <li>Basic swap functionality</li>
+                        <li>Standard processing speed</li>
+                        <li>Community support</li>
+                        <li>Basic analytics</li>
+                    </ul>
+                    <button class="swap-button" style="margin-top: 20px;">Free Access</button>
+                </div>
+                
+                <div class="tier-card" style="border-color: #f7931a; transform: scale(1.05);">
+                    <div class="tier-name">Gold Member</div>
+                    <div class="tier-fee">0.05%</div>
+                    <ul class="tier-features">
+                        <li>Ultra-low fees</li>
+                        <li>Priority processing</li>
+                        <li>Advanced analytics</li>
+                        <li>24/7 premium support</li>
+                        <li>API access</li>
+                        <li>Yield farming</li>
+                    </ul>
+                    <button class="swap-button" style="margin-top: 20px;">Concept: 1 BTC / Year</button>
+                </div>
+                
+                <div class="tier-card">
+                    <div class="tier-name">Diamond VIP</div>
+                    <div class="tier-fee">0.01%</div>
+                    <ul class="tier-features">
+                        <li>Minimal fees</li>
+                        <li>Instant processing</li>
+                        <li>White-glove service</li>
+                        <li>Custom integrations</li>
+                        <li>Exclusive features</li>
+                        <li>Direct line to team</li>
+                    </ul>
+                    <button class="swap-button" style="margin-top: 20px;">Concept: 5 BTC / Year</button>
+                </div>
+            </div>
+        </section>
+        
+        <section id="features" class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <h3>Lightning Fast</h3>
+                <p>Swaps complete in seconds with our optimized routing algorithms and Lightning Network integration.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">🔒</div>
+                <h3>Non-Custodial</h3>
+                <p>Your keys, your crypto. We never hold your funds - all swaps happen directly from your wallet.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">📊</div>
+                <h3>Best Rates</h3>
+                <p>Aggregated liquidity from multiple sources ensures you always get the best possible exchange rates.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">🛡️</div>
+                <h3>Secure & Audited</h3>
+                <p>Smart contracts audited by leading security firms. Your transactions are protected by battle-tested code.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">🌐</div>
+                <h3>Multi-Chain</h3>
+                <p>Swap between Bitcoin, Ethereum, and 50+ other cryptocurrencies across multiple blockchains.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">💎</div>
+                <h3>Membership Rewards</h3>
+                <p>Earn exclusive benefits, reduced fees, and governance tokens through our membership program.</p>
+            </div>
+        </section>
+    </main>
+    
+    <script>
+        // Mock exchange rates
+        const exchangeRates = {
+            'BTC-ETH': 15.42,
+            'BTC-LTC': 145.67,
+            'BTC-ADA': 45678.90,
+            'ETH-BTC': 0.0649,
+            'ETH-LTC': 9.45,
+            'ETH-ADA': 2963.21
+        };
+        
+        // Mock balances
+        const balances = {
+            'BTC': 0.5432,
+            'ETH': 8.7654,
+            'LTC': 23.456,
+            'ADA': 1234.56
+        };
+        
+        function updateBalance() {
+            const fromToken = document.getElementById('fromToken').value;
+            const toToken = document.getElementById('toToken').value;
+            
+            document.getElementById('fromBalance').textContent = balances[fromToken].toFixed(8);
+            document.getElementById('toBalance').textContent = balances[toToken].toFixed(8);
+        }
+        
+        function updateExchangeRate() {
+            const fromToken = document.getElementById('fromToken').value;
+            const toToken = document.getElementById('toToken').value;
+            const rateKey = `${fromToken}-${toToken}`;
+            const rate = exchangeRates[rateKey] || (1 / exchangeRates[`${toToken}-${fromToken}`]) || 1;
+            
+            document.getElementById('exchangeRate').textContent = `1 ${fromToken} = ${rate.toFixed(4)} ${toToken}`;
+            
+            // Update calculated amount
+            const fromAmount = parseFloat(document.getElementById('fromAmount').value) || 0;
+            const toAmount = fromAmount * rate;
+            document.getElementById('toAmount').value = toAmount.toFixed(8);
+            
+            // Update fees and final amount
+            const networkFee = fromAmount * 0.001;
+            const btcsaFee = fromAmount * 0.0005; // 0.05% for members
+            const finalAmount = toAmount - (networkFee + btcsaFee) * rate;
+            
+            document.getElementById('networkFee').textContent = `${networkFee.toFixed(8)} ${fromToken}`;
+            document.getElementById('finalAmount').textContent = `~${finalAmount.toFixed(6)} ${toToken}`;
+        }
+        
+        function swapTokens() {
+            const fromToken = document.getElementById('fromToken');
+            const toToken = document.getElementById('toToken');
+            const fromAmount = document.getElementById('fromAmount');
+            const toAmount = document.getElementById('toAmount');
+            
+            // Swap the tokens
+            const tempToken = fromToken.value;
+            fromToken.value = toToken.value;
+            toToken.value = tempToken;
+            
+            // Swap amounts
+            fromAmount.value = toAmount.value;
+            toAmount.value = '';
+            
+            updateBalance();
+            updateExchangeRate();
+        }
+        
+        function initiateSwap() {
+            const fromAmount = document.getElementById('fromAmount').value;
+            const fromToken = document.getElementById('fromToken').value;
+            const toToken = document.getElementById('toToken').value;
+            
+            if (!fromAmount || fromAmount <= 0) {
+                alert('Please enter a valid amount to swap');
+                return;
+            }
+            
+            // Simulate wallet connection
+            alert(`Connecting wallet to swap ${fromAmount} ${fromToken} for ${toToken}...\n\nThis is a demo - no actual swap will occur.`);
+        }
+        
+        // Create floating particles
+        function createParticles() {
+            const container = document.getElementById('particles');
+            
+            for (let i = 0; i < 50; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 8 + 's';
+                particle.style.animationDuration = (8 + Math.random() * 4) + 's';
+                container.appendChild(particle);
+            }
+        }
+        
+        // Event listeners
+        document.getElementById('fromToken').addEventListener('change', () => {
+            updateBalance();
+            updateExchangeRate();
+        });
+        
+        document.getElementById('toToken').addEventListener('change', () => {
+            updateBalance();
+            updateExchangeRate();
+        });
+        
+        document.getElementById('fromAmount').addEventListener('input', updateExchangeRate);
+        
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            updateBalance();
+            updateExchangeRate();
+            createParticles();
+        });
+        
+        // Simulate real-time price updates
+        setInterval(() => {
+            const keys = Object.keys(exchangeRates);
+            keys.forEach(key => {
+                const variation = (Math.random() - 0.5) * 0.02; // ±1% variation
+                exchangeRates[key] *= (1 + variation);
+            });
+            updateExchangeRate();
+        }, 5000);
+    </script>
+</body>
+</html>

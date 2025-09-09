@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BTCSA - Bitcoin Service Association | Premium Domain Portfolio</title>
+    <meta name="description" content="Bitcoin Service Association - Professional Bitcoin services platform. Premium BTCSA domain portfolio available for purchase.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            padding: 20px 0;
+            position: relative;
+            z-index: 1000;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 15px 30px;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 28px;
+            font-weight: bold;
+            color: white;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .bitcoin-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(45deg, #f7931a, #ffb347);
+            border-radius: 50%;
+            margin-right: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: white;
+            font-size: 20px;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 8px 16px;
+            border-radius: 8px;
+        }
+        
+        .nav-links a:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+        
+        .hero {
+            text-align: center;
+            padding: 80px 0;
+            color: white;
+        }
+        
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+            text-shadow: 0 4px 8px rgba(0,0,0,0.3);
+            background: linear-gradient(45deg, #fff, #f7931a);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hero .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+        
+        .btn {
+            padding: 15px 30px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(45deg, #f7931a, #ffb347);
+            color: white;
+            box-shadow: 0 8px 25px rgba(247, 147, 26, 0.3);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(247, 147, 26, 0.4);
+        }
+        
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-3px);
+        }
+        
+        .section {
+            padding: 100px 0;
+            background: rgba(255, 255, 255, 0.95);
+            margin-top: 50px;
+            backdrop-filter: blur(20px);
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+        
+        .feature-card {
+            text-align: center;
+            padding: 40px 30px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+        }
+        
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            border-radius: 50%;
+            margin: 0 auto 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            color: white;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: #333;
+            font-weight: 700;
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.3rem;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+        
+        .domains-section {
+            background: linear-gradient(135deg, #f7931a 0%, #ffb347 100%);
+            color: white;
+        }
+        
+        .domains-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 60px;
+        }
+        
+        .domain-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 25px 20px;
+            border-radius: 15px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: white;
+            display: block;
+        }
+        
+        .domain-card:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-5px);
+            text-decoration: none;
+            color: white;
+        }
+        
+        .domain-preview {
+            font-size: 0.8rem;
+            opacity: 0.7;
+            margin-top: 8px;
+            font-style: italic;
+        }
+        
+        .domain-name {
+            font-size: 1.4rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .domain-purpose {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        .mailing-list-section {
+            background: rgba(247, 147, 26, 0.1);
+            border-radius: 20px;
+            padding: 60px 40px;
+            margin: 50px 0;
+            text-align: center;
+        }
+        
+        .email-form {
+            max-width: 500px;
+            margin: 30px auto;
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .email-input {
+            flex: 1;
+            min-width: 300px;
+            padding: 15px 20px;
+            border: 2px solid #f7931a;
+            border-radius: 25px;
+            font-size: 16px;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+        
+        .email-input:focus {
+            border-color: #e6820a;
+            box-shadow: 0 0 0 3px rgba(247, 147, 26, 0.2);
+        }
+        
+        .success-message, .error-message {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 10px;
+            display: none;
+        }
+        
+        .success-message {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        
+        .error-message {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        
+        .purchase-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
+        .purchase-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+        
+        .purchase-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 40px 30px;
+            border-radius: 20px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .contact-info {
+            background: rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            margin-top: 40px;
+        }
+        
+        footer {
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            text-align: center;
+            padding: 40px 0;
+            margin-top: 50px;
+        }
+        
+        .floating-elements {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+        
+        .floating-bitcoin {
+            position: absolute;
+            color: rgba(247, 147, 26, 0.1);
+            font-size: 60px;
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .floating-bitcoin:nth-child(1) { top: 20%; left: 10%; animation-delay: 0s; }
+        .floating-bitcoin:nth-child(2) { top: 60%; right: 15%; animation-delay: 2s; }
+        .floating-bitcoin:nth-child(3) { bottom: 30%; left: 20%; animation-delay: 4s; }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .nav-links { display: none; }
+            .cta-buttons { flex-direction: column; align-items: center; }
+            .email-form { flex-direction: column; }
+            .email-input { min-width: 250px; }
+            .domains-grid { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
+        }
+    </style>
+</head>
+<body>
+    <div class="floating-elements">
+        <div class="floating-bitcoin">₿</div>
+        <div class="floating-bitcoin">₿</div>
+        <div class="floating-bitcoin">₿</div>
+    </div>
+    
+    <div class="container">
+        <header>
+            <nav>
+                <div class="logo">
+                    <div class="bitcoin-icon">₿</div>
+                    BTCSA
+                </div>
+                <div class="nav-links">
+                    <a href="#services">Services</a>
+                    <a href="#domains">Domains</a>
+                    <a href="#purchase">Purchase</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </nav>
+        </header>
+        
+        <section class="hero">
+            <h1>Bitcoin Service Association</h1>
+            <p class="subtitle">Premium Bitcoin Domain Portfolio & Professional Services Platform</p>
+            
+            <div class="cta-buttons">
+                <a href="#mailing-list" class="btn btn-primary">Join Our Network</a>
+                <a href="#domains" class="btn btn-secondary">View Domain Portfolio</a>
+            </div>
+        </section>
+    </div>
+    
+    <section class="section" id="services">
+        <div class="container">
+            <h2 class="section-title">Professional Bitcoin Services</h2>
+            <p class="section-subtitle">A comprehensive platform connecting Bitcoin professionals, services, and innovation worldwide</p>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🏢</div>
+                    <h3>Business Solutions</h3>
+                    <p>Enterprise-grade Bitcoin payment processing, treasury management, and integration services for businesses of all sizes.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">📚</div>
+                    <h3>Education & Training</h3>
+                    <p>Comprehensive Bitcoin education programs, certification courses, and professional development resources.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🔗</div>
+                    <h3>Professional Network</h3>
+                    <p>Connect with Bitcoin developers, consultants, legal experts, and service providers in our verified network.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Lightning Services</h3>
+                    <p>Lightning Network implementation, channel management, and instant payment solutions for modern applications.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🛡️</div>
+                    <h3>Security Consulting</h3>
+                    <p>Professional security audits, custody solutions, and best practices for Bitcoin storage and transactions.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Market Analytics</h3>
+                    <p>Advanced Bitcoin market analysis, trading tools, and institutional-grade research and reporting.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="section domains-section" id="domains">
+        <div class="container">
+            <h2 class="section-title">Premium BTCSA Domain Portfolio</h2>
+            <p class="section-subtitle">17 premium domains strategically positioned for Bitcoin services and applications</p>
+            
+            <div class="domains-grid">
+                <a href="/cc" class="domain-card">
+                    <div class="domain-name">btcsa.cc</div>
+                    <div class="domain-purpose">Bitcoin DEX & Swaps</div>
+                    <div class="domain-preview">🔄 Ultra-low fees, membership access</div>
+                </a>
+                <a href="/email" class="domain-card">
+                    <div class="domain-name">btcsa.email</div>
+                    <div class="domain-purpose">Encrypted Communication</div>
+                    <div class="domain-preview">📧 Bitcoin-secured messaging</div>
+                </a>
+                <a href="/info" class="domain-card">
+                    <div class="domain-name">btcsa.info</div>
+                    <div class="domain-purpose">Bitcoin Knowledge Hub</div>
+                    <div class="domain-preview">📚 Education & research center</div>
+                </a>
+                <a href="/life" class="domain-card">
+                    <div class="domain-name">btcsa.life</div>
+                    <div class="domain-purpose">Bitcoin Lifestyle</div>
+                    <div class="domain-preview">🌟 Living on Bitcoin standard</div>
+                </a>
+                <a href="/me" class="domain-card">
+                    <div class="domain-name">btcsa.me</div>
+                    <div class="domain-purpose">Sovereign Identity</div>
+                    <div class="domain-preview">🔐 ZKP wallet & privacy tech</div>
+                </a>
+                <a href="/biz" class="domain-card">
+                    <div class="domain-name">btcsa.biz</div>
+                    <div class="domain-purpose">Bitcoin Business Hub</div>
+                    <div class="domain-preview">🏢 Enterprise Bitcoin solutions</div>
+                </a>
+                <a href="/world" class="domain-card">
+                    <div class="domain-name">btcsa.world</div>
+                    <div class="domain-purpose">Global Bitcoin Network</div>
+                    <div class="domain-preview">🌍 Worldwide Bitcoin community</div>
+                </a>
+                <a href="/vip" class="domain-card">
+                    <div class="domain-name">btcsa.vip</div>
+                    <div class="domain-purpose">Very Important Projects</div>
+                    <div class="domain-preview">🌍 Bitcoin-funded social initiatives</div>
+                </a>
+                <a href="/services" class="domain-card">
+                    <div class="domain-name">btcsa.services</div>
+                    <div class="domain-purpose">Service Marketplace</div>
+                    <div class="domain-preview">🛠️ Verified Bitcoin professionals</div>
+                </a>
+                <a href="/agency" class="domain-card">
+                    <div class="domain-name">btcsa.agency</div>
+                    <div class="domain-purpose">Bitcoin Consulting</div>
+                    <div class="domain-preview">🎯 Strategic Bitcoin advisory</div>
+                </a>
+                <a href="/club" class="domain-card">
+                    <div class="domain-name">btcsa.club</div>
+                    <div class="domain-purpose">Exclusive Membership</div>
+                    <div class="domain-preview">🏆 Elite Bitcoin community</div>
+                </a>
+                <a href="/pro" class="domain-card">
+                    <div class="domain-name">btcsa.pro</div>
+                    <div class="domain-purpose">Professional Network</div>
+                    <div class="domain-preview">👔 Bitcoin expert directory</div>
+                </a>
+                <a href="/art" class="domain-card">
+                    <div class="domain-name">btcsa.art</div>
+                    <div class="domain-purpose">Bitcoin Art & NFTs</div>
+                    <div class="domain-preview">🎨 Digital art on Bitcoin</div>
+                </a>
+                <a href="/online" class="domain-card">
+                    <div class="domain-name">btcsa.online</div>
+                    <div class="domain-purpose">Digital Bitcoin Services</div>
+                    <div class="domain-preview">💻 Online Bitcoin tools</div>
+                </a>
+                <a href="/shop" class="domain-card">
+                    <div class="domain-name">btcsa.shop</div>
+                    <div class="domain-purpose">Bitcoin Commerce</div>
+                    <div class="domain-preview">🛒 Lightning-powered shopping</div>
+                </a>
+                <a href="/store" class="domain-card">
+                    <div class="domain-name">btcsa.store</div>
+                    <div class="domain-purpose">Digital Marketplace</div>
+                    <div class="domain-preview">🏪 Bitcoin-only marketplace</div>
+                </a>
+                <a href="/xyz" class="domain-card">
+                    <div class="domain-name">btcsa.xyz</div>
+                    <div class="domain-purpose">Innovation Lab</div>
+                    <div class="domain-preview">🚀 Cutting-edge Bitcoin tech</div>
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <section class="section" id="mailing-list">
+        <div class="container">
+            <div class="mailing-list-section">
+                <h3 style="font-size: 2.5rem; color: #f7931a; margin-bottom: 20px;">Join the BTCSA Network</h3>
+                <p style="font-size: 1.2rem; margin-bottom: 30px;">Be the first to know when we launch our professional Bitcoin services platform</p>
+                
+                <form class="email-form" id="mailingListForm">
+                    <input type="email" class="email-input" id="emailInput" placeholder="Enter your professional email address" required>
+                    <button type="submit" class="btn btn-primary">Join Network</button>
+                </form>
+                
+                <div class="success-message" id="successMessage">
+                    ✅ Thank you! You've been added to our professional network. We'll notify you when BTCSA launches.
+                </div>
+                
+                <div class="error-message" id="errorMessage">
+                    ❌ Please enter a valid email address to join our network.
+                </div>
+                
+                <div style="margin-top: 40px; display: flex; justify-content: center; gap: 40px; flex-wrap: wrap;">
+                    <div style="text-align: center;">
+                        <h4 style="color: #f7931a; margin-bottom: 10px;">🏢 Service Providers</h4>
+                        <p style="font-size: 14px; opacity: 0.8;">Get verified and reach qualified Bitcoin clients</p>
+                    </div>
+                    <div style="text-align: center;">
+                        <h4 style="color: #f7931a; margin-bottom: 10px;">👥 Bitcoin Professionals</h4>
+                        <p style="font-size: 14px; opacity: 0.8;">Access verified, audited service providers</p>
+                    </div>
+                    <div style="text-align: center;">
+                        <h4 style="color: #f7931a; margin-bottom: 10px;">🚀 Early Access</h4>
+                        <p style="font-size: 14px; opacity: 0.8;">Beta access to platform features and tools</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="section purchase-section" id="purchase">
+        <div class="container">
+            <h2 class="section-title">Domain Portfolio Available</h2>
+            <p class="section-subtitle">Premium BTCSA domains and platform available for purchase by serious Bitcoin businesses</p>
+            
+            <div class="purchase-grid">
+                <div class="purchase-card">
+                    <h3 style="margin-bottom: 20px;">🏢 Individual Domains</h3>
+                    <p>Select specific domains from our portfolio for your Bitcoin business or project. Each domain comes with full ownership transfer and premium positioning in the Bitcoin space.</p>
+                </div>
+                
+                <div class="purchase-card">
+                    <h3 style="margin-bottom: 20px;">📦 Complete Portfolio</h3>
+                    <p>Acquire the entire BTCSA domain portfolio and platform concept. Perfect for established Bitcoin companies looking to expand their service offerings.</p>
+                </div>
+                
+                <div class="purchase-card">
+                    <h3 style="margin-bottom: 20px;">🤝 Partnership Opportunities</h3>
+                    <p>Collaborate with us to develop the BTCSA platform. Joint venture opportunities available for qualified Bitcoin service providers and investors.</p>
+                </div>
+            </div>
+            
+            <div class="contact-info">
+                <h3 style="margin-bottom: 20px;">Contact for Purchase Inquiries</h3>
+                <p style="font-size: 1.1rem; margin-bottom: 15px;">
+                    📧 Domain Sales: <strong>btcsaw@p-h.email</strong>
+                </p>
+                <p style="font-size: 1.1rem; margin-bottom: 15px;">
+                    💼 Business Partnerships: <strong>btcsaw@p-h.email</strong>
+                </p>
+                <p style="font-size: 1.1rem;">
+                    📞 Serious inquiries only. Please include your company information and intended use case.
+                </p>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Bitcoin Service Association (BTCSA). Premium Bitcoin Domain Portfolio.</p>
+            <p style="margin-top: 10px; opacity: 0.7;">
+                Platform Inquiries: btcsaw@p-h.email | Domain Sales: btcsaw@p-h.email
+            </p>
+            <p style="margin-top: 15px; padding: 15px; background: rgba(255, 193, 7, 0.1); border-radius: 8px; border-left: 4px solid #ffc107; font-size: 0.9rem;">
+                <strong>⚠️ DISCLAIMER:</strong> This platform is currently a conceptual showcase demonstrating potential Bitcoin services and applications. No services are currently operational, no partnerships exist, and no funding has been secured. This is a vision presentation of what could be built in the Bitcoin ecosystem.
+            </p>
+        </div>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>
