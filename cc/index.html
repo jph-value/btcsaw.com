@@ -3,49 +3,143 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BTCSA.CC - Bitcoin DEX | Ultra-Low Fee Swaps</title>
+    <title>BTCSA.CC - DEX Engine | Optimized Atomic Swaps</title>
+    <meta name="description" content="Professional Bitcoin DEX platform with optimized atomic swaps and institutional-grade liquidity solutions.">
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
+        :root {
+            --primary-bg: linear-gradient(135deg, #0a0a0f 0%, #111118 50%, #1a1a23 100%);
+            --secondary-bg: linear-gradient(135deg, #1e1e2e 0%, #2a2a3e 100%);
+            --accent-color: #f7931a;
+            --text-primary: #ffffff;
+            --text-secondary: rgba(255, 255, 255, 0.7);
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --shadow-primary: 0 8px 32px rgba(0, 0, 0, 0.3);
+            --shadow-accent: 0 0 20px rgba(247, 147, 26, 0.2);
+        }
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
-            color: white;
+            font-family: 'Inter', 'Segoe UI', sans-serif;
+            background: var(--primary-bg);
+            color: var(--text-primary);
             min-height: 100vh;
             overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* Elegant Background Elements */
+        .background-elements {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .bg-shape {
+            position: absolute;
+            opacity: 0.03;
+            animation: gentleFloat 20s ease-in-out infinite;
+        }
+
+        .bg-shape:nth-child(1) {
+            top: 10%;
+            right: 10%;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, var(--accent-color) 0%, transparent 70%);
+            border-radius: 50%;
+            animation-delay: 0s;
+        }
+
+        .bg-shape:nth-child(2) {
+            top: 60%;
+            left: 5%;
+            width: 200px;
+            height: 200px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+            animation-delay: 7s;
+        }
+
+        .bg-shape:nth-child(3) {
+            bottom: 20%;
+            right: 15%;
+            width: 150px;
+            height: 150px;
+            background: linear-gradient(135deg, #f5576c, #4facfe);
+            clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+            animation-delay: 14s;
+        }
+
+        @keyframes gentleFloat {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            33% { transform: translateY(-20px) rotate(120deg); }
+            66% { transform: translateY(10px) rotate(240deg); }
         }
         
         .container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 30px;
         }
-        
+
         header {
-            padding: 20px 0;
-            background: rgba(0, 0, 0, 0.3);
-            backdrop-filter: blur(20px);
-            position: sticky;
-            top: 0;
+            padding: 30px 0;
+            position: relative;
             z-index: 1000;
         }
-        
+
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            padding: 20px 30px;
+            border-radius: 16px;
+            border: 1px solid var(--glass-border);
+            box-shadow: var(--shadow-primary);
+            transition: all 0.4s ease;
         }
-        
+
+        nav:hover {
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+            border-color: rgba(255, 255, 255, 0.15);
+        }
+
         .logo {
             display: flex;
             align-items: center;
-            font-size: 28px;
-            font-weight: bold;
-            color: #f7931a;
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--text-primary);
+            position: relative;
+        }
+
+        .logo::before {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            bottom: -5px;
+            background: linear-gradient(135deg, var(--accent-color), #ffb347);
+            border-radius: 12px;
+            z-index: -1;
+            opacity: 0.2;
+            filter: blur(8px);
         }
         
         .bitcoin-icon {
@@ -75,22 +169,46 @@
         
         .hero {
             text-align: center;
-            padding: 80px 0;
+            padding: 120px 0 100px;
+            position: relative;
+            overflow: hidden;
         }
-        
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 150%;
+            height: 150%;
+            background: radial-gradient(circle, rgba(247, 147, 26, 0.05) 0%, transparent 70%);
+            transform: translate(-50%, -50%);
+            animation: heroPulse 12s ease-in-out infinite;
+        }
+
+        @keyframes heroPulse {
+            0%, 100% { opacity: 0.3; transform: translate(-50%, -50%) scale(1); }
+            50% { opacity: 0.6; transform: translate(-50%, -50%) scale(1.05); }
+        }
+
         .hero h1 {
-            font-size: 4rem;
-            margin-bottom: 20px;
-            background: linear-gradient(45deg, #f7931a, #ffb347);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            font-size: 4.5rem;
+            margin-bottom: 30px;
+            font-weight: 700;
+            color: var(--text-primary);
+            text-shadow: 0 0 30px rgba(247, 147, 26, 0.3);
+            position: relative;
         }
-        
+
         .hero .subtitle {
-            font-size: 1.5rem;
-            opacity: 0.8;
-            margin-bottom: 40px;
+            font-size: 1.6rem;
+            opacity: 0.9;
+            margin-bottom: 60px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.5;
+            font-weight: 400;
         }
         
         .dex-container {
@@ -382,10 +500,10 @@
     
     <main class="container">
         <section class="hero">
-            <h1>Bitcoin DEX</h1>
-            <p class="subtitle">Conceptual ultra-low fee Bitcoin swaps with institutional liquidity</p>
-            <div style="background: rgba(255, 193, 7, 0.1); border-left: 4px solid #ffc107; padding: 15px; margin: 20px 0; border-radius: 8px;">
-                <strong>⚠️ CONCEPT DEMO:</strong> This DEX interface is a demonstration only. No trading functionality exists, no liquidity is available, and no memberships are active. Contact: <strong>btcsaw@p-h.email</strong>
+            <h1>DEX Engine</h1>
+            <p class="subtitle">Professional Bitcoin DEX platform with optimized atomic swaps and institutional-grade liquidity solutions</p>
+            <div style="background: rgba(255, 193, 7, 0.1); border-left: 4px solid #ffc107; padding: 20px; margin: 30px 0; border-radius: 12px; backdrop-filter: blur(10px); border: 1px solid rgba(255, 193, 7, 0.2);">
+                <strong>📋 CONCEPT SHOWCASE:</strong> This interface demonstrates the potential of a professional DEX platform. No trading functionality exists, no liquidity is available, and no memberships are active. Contact: <strong>btcsaw@p-h.email</strong>
             </div>
         </section>
         
@@ -459,48 +577,46 @@
         </section>
         
         <section id="membership" class="membership-section">
-            <h2 style="font-size: 3rem; margin-bottom: 20px;">Membership Tiers</h2>
-            <p style="font-size: 1.2rem; opacity: 0.8;">Lower fees, exclusive features, and priority access</p>
-            
+            <h2 style="font-size: 3rem; margin-bottom: 20px;">Access Tiers</h2>
+            <p style="font-size: 1.2rem; opacity: 0.8;">Different levels of platform access and features for various user needs</p>
+
             <div class="membership-tiers">
                 <div class="tier-card">
                     <div class="tier-name">Standard</div>
-                    <div class="tier-fee">0.25%</div>
+                    <div class="tier-fee">Free</div>
                     <ul class="tier-features">
-                        <li>Swap simulation functionality</li>
-                        <li>Standard processing speed</li>
+                        <li>Basic swap interface</li>
+                        <li>Standard processing</li>
                         <li>Community support</li>
-                        <li>Basic analytics</li>
+                        <li>Basic market data</li>
                     </ul>
-                    <button class="swap-button" style="margin-top: 20px;">Free Access</button>
+                    <button class="swap-button" style="margin-top: 20px;">Get Started</button>
                 </div>
-                
-                <div class="tier-card" style="border-color: #f7931a; transform: scale(1.05);">
-                    <div class="tier-name">Gold Member</div>
-                    <div class="tier-fee">0.05%</div>
+
+                <div class="tier-card" style="border-color: #f7931a; transform: scale(1.02);">
+                    <div class="tier-name">Professional</div>
+                    <div class="tier-fee">0.1%</div>
                     <ul class="tier-features">
-                        <li>Ultra-low fees</li>
-                        <li>Priority processing</li>
                         <li>Advanced analytics</li>
-                        <li>24/7 premium support</li>
+                        <li>Priority processing</li>
+                        <li>Technical support</li>
                         <li>API access</li>
-                        <li>Yield farming</li>
-                    </ul>
-                    <button class="swap-button" style="margin-top: 20px;">Concept: 1 BTC / Year</button>
-                </div>
-                
-                <div class="tier-card">
-                    <div class="tier-name">Diamond VIP</div>
-                    <div class="tier-fee">0.01%</div>
-                    <ul class="tier-features">
-                        <li>Minimal fees</li>
-                        <li>Instant processing</li>
-                        <li>White-glove service</li>
                         <li>Custom integrations</li>
-                        <li>Exclusive features</li>
-                        <li>Direct line to team</li>
                     </ul>
-                    <button class="swap-button" style="margin-top: 20px;">Concept: 5 BTC / Year</button>
+                    <button class="swap-button" style="margin-top: 20px;">Professional Access</button>
+                </div>
+
+                <div class="tier-card">
+                    <div class="tier-name">Enterprise</div>
+                    <div class="tier-fee">Custom</div>
+                    <ul class="tier-features">
+                        <li>Dedicated support</li>
+                        <li>Custom solutions</li>
+                        <li>Volume pricing</li>
+                        <li>Advanced features</li>
+                        <li>SLA guarantees</li>
+                    </ul>
+                    <button class="swap-button" style="margin-top: 20px;">Contact Sales</button>
                 </div>
             </div>
         </section>
@@ -508,38 +624,38 @@
         <section id="features" class="features-grid">
             <div class="feature-card">
                 <div class="feature-icon">⚡</div>
-                <h3>Lightning Fast</h3>
-                <p>Swaps complete in seconds with our optimized routing algorithms and Lightning Network integration.</p>
+                <h3>Efficient Processing</h3>
+                <p>Optimized transaction processing with Lightning Network integration for reliable swap execution.</p>
             </div>
-            
+
             <div class="feature-card">
                 <div class="feature-icon">🔒</div>
-                <h3>Non-Custodial</h3>
-                <p>Your keys, your crypto. We never hold your funds - all swaps happen directly from your wallet.</p>
+                <h3>Self-Custody</h3>
+                <p>Maintain full control of your assets with non-custodial architecture and direct wallet integration.</p>
             </div>
-            
+
             <div class="feature-card">
                 <div class="feature-icon">📊</div>
-                <h3>Best Rates</h3>
-                <p>Aggregated liquidity from multiple sources ensures you always get the best possible exchange rates.</p>
+                <h3>Market Data</h3>
+                <p>Real-time market information and competitive exchange rates from established liquidity sources.</p>
             </div>
-            
+
             <div class="feature-card">
                 <div class="feature-icon">🛡️</div>
-                <h3>Secure & Audited</h3>
-                <p>Smart contracts audited by leading security firms. Your transactions are protected by battle-tested code.</p>
+                <h3>Security First</h3>
+                <p>Industry-standard security practices with comprehensive audit trails and risk management protocols.</p>
             </div>
-            
+
             <div class="feature-card">
                 <div class="feature-icon">🌐</div>
-                <h3>Multi-Chain</h3>
-                <p>Swap between Bitcoin, Ethereum, and 50+ other cryptocurrencies across multiple blockchains.</p>
+                <h3>Cross-Chain</h3>
+                <p>Support for major cryptocurrencies with atomic swap technology across multiple blockchain networks.</p>
             </div>
-            
+
             <div class="feature-card">
                 <div class="feature-icon">💎</div>
-                <h3>Membership Rewards</h3>
-                <p>Earn exclusive benefits, reduced fees, and governance tokens through our membership program.</p>
+                <h3>Professional Access</h3>
+                <p>Differentiated service levels with priority support and advanced features for professional users.</p>
             </div>
         </section>
     </main>

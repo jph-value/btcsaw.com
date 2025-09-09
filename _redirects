@@ -1,24 +1,5 @@
 # Main domain serves portfolio
 https://btcsaw.com/* https://btcsaw.com/:splat 200
 
-# BTCSA domain routing
-https://btcsa.cc/* /cc/:splat 200
-https://btcsa.email/* /email/:splat 200  
-https://btcsa.info/* /info/:splat 200
-https://btcsa.life/* /life/:splat 200
-https://btcsa.me/* /me/:splat 200
-https://btcsa.biz/* /biz/:splat 200
-https://btcsa.world/* /world/:splat 200
-https://btcsa.vip/* /vip/:splat 200
-https://btcsa.services/* /services/:splat 200
-https://btcsa.agency/* /agency/:splat 200
-https://btcsa.pro/* /pro/:splat 200
-https://btcsa.art/* /art/:splat 200
-https://btcsa.online/* /online/:splat 200
-https://btcsa.shop/* /shop/:splat 200
-https://btcsa.store/* /store/:splat 200
-https://btcsa.xyz/* /xyz/:splat 200
-https://btcsa.club/* /club/:splat 200
-
-# Fallback - any unmatched routes go to main portfolio
-/* /index.html 200
+# API redirects for Netlify functions
+/api/* /.netlify/functions/:splat 200

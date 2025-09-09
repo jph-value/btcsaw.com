@@ -40,72 +40,69 @@ BTCSA (Bitcoin Service Association) is a comprehensive platform showcasing:
 ## Technical Stack
 
 - **Frontend**: HTML5, CSS3, Vanilla JavaScript
-- **Backend**: Node.js, Express.js
-- **Storage**: JSON file storage (easily upgradeable to database)
+- **Backend**: Netlify Functions (Serverless)
+- **Deployment**: Netlify (CDN, SSL, Domain Management)
+- **Domain Routing**: Host-based redirects in netlify.toml
 - **Styling**: Modern CSS with gradients, animations, and responsive design
 
 ## Quick Start
 
 ### Prerequisites
-- Node.js 16+ installed
-- npm or yarn package manager
+- Netlify account and CLI installed
+- Git repository
 
-### Installation
+### Deployment
 
-1. **Install Dependencies**
-   ```bash
-   npm install
-   ```
+1. **Connect Repository to Netlify**
+   - Link your GitHub repository to Netlify
+   - Configure build settings (no build command needed for static site)
 
-2. **Start Development Server**
-   ```bash
-   npm run dev
-   ```
+2. **Configure Domain Aliases**
+   - Add all 17 BTCSA domains as aliases in Netlify dashboard
+   - Point DNS CNAME records to your Netlify site
 
-3. **Start Production Server**
-   ```bash
-   npm start
-   ```
+3. **Deploy**
+   - Netlify automatically deploys on git push
+   - SSL certificates provisioned automatically
+   - Domain routing handled by netlify.toml configuration
 
-4. **Visit the Site**
-   ```
-   http://localhost:3000
-   ```
+4. **Visit Your Sites**
+   - Main site: `https://btcsaw.com`
+   - Domain pages: `https://btcsa.cc`, `https://btcsa.email`, etc.
 
 ## API Endpoints
 
-### Public Endpoints
-- `GET /` - Main website
-- `POST /api/subscribe` - Subscribe to mailing list
-- `GET /api/subscribers/count` - Get subscriber count
-- `GET /api/health` - Health check
+### Netlify Functions
+
+#### Mailing List Function (`/api/mailing-list`)
+- `POST /api/mailing-list` - Subscribe to mailing list
+  - Body: `{ "email": "user@example.com" }`
+  - Returns: Success/error message
+
+- `GET /api/mailing-list` - Get function info
+
+#### Contact Function (`/api/contact`)
 - `POST /api/contact` - Contact form submission
+  - Body: `{ "name": "John", "email": "john@example.com", "message": "Hello" }`
+  - Returns: Success/error message
 
-### Admin Endpoints
-- `GET /api/admin/emails` - View all emails (requires auth header)
-
-### Authentication
-Admin endpoints require header: `Authorization: Bearer btcsa-admin-2025`
+### Function Locations
+- Functions are located in: `netlify/functions/`
+- Automatically deployed by Netlify on git push
+- CORS enabled for all origins
 
 ## Email Management
 
-### View Subscribers (Console)
-```javascript
-// In browser console
-btcsaAdmin.viewEmails()
-```
+### Current Implementation
+- Email subscriptions are handled by the `/api/mailing-list` Netlify Function
+- Emails are processed server-side (no local storage)
+- Contact forms are handled by the `/api/contact` Netlify Function
 
-### Export Email List
-```javascript
-// In browser console
-btcsaAdmin.exportEmails()
-```
-
-### Clear Email List
-```javascript
-// In browser console
-btcsaAdmin.clearEmails()
-```
+### Function Features
+- Server-side email validation
+- CORS enabled for cross-origin requests
+- Error handling and logging
+- Scalable serverless architecture
 
 ## Domain Portfolio
 
