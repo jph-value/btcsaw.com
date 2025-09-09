@@ -11,8 +11,125 @@
   to = "/.netlify/functions/:splat"
   status = 200
 
-# Domain routing handled by JavaScript in index.html
-# Netlify redirects weren't working properly with host attributes
+# Domain-specific redirects - each BTCSA domain serves its own content
+[[redirects]]
+  from = "/"
+  to = "/cc/"
+  status = 200
+  force = true
+  conditions = {Host = ["btcsa.cc"]}
+
+[[redirects]]
+  from = "/"
+  to = "/email/"
+  status = 200
+  force = true
+  conditions = {Host = ["btcsa.email"]}
+
+[[redirects]]
+  from = "/"
+  to = "/info/"
+  status = 200
+  force = true
+  conditions = {Host = ["btcsa.info"]}
+
+[[redirects]]
+  from = "/"
+  to = "/life/"
+  status = 200
+  force = true
+  conditions = {Host = ["btcsa.life"]}
+
+[[redirects]]
+  from = "/"
+  to = "/me/"
+  status = 200
+  force = true
+  conditions = {Host = ["btcsa.me"]}
+
+[[redirects]]
+  from = "/"
+  to = "/biz/"
+  status = 200
+  force = true
+  conditions = {Host = ["btcsa.biz"]}
+
+[[redirects]]
+  from = "/"
+  to = "/world/"
+  status = 200
+  force = true
+  conditions = {Host = ["btcsa.world"]}
+
+[[redirects]]
+  from = "/"
+  to = "/vip/"
+  status = 200
+  force = true
+  conditions = {Host = ["btcsa.vip"]}
+
+[[redirects]]
+  from = "/"
+  to = "/services/"
+  status = 200
+  force = true
+  conditions = {Host = ["btcsa.services"]}
+
+[[redirects]]
+  from = "/"
+  to = "/agency/"
+  status = 200
+  force = true
+  conditions = {Host = ["btcsa.agency"]}
+
+[[redirects]]
+  from = "/"
+  to = "/shop/"
+  status = 200
+  force = true
+  conditions = {Host = ["btcsa.shop"]}
+
+[[redirects]]
+  from = "/"
+  to = "/store/"
+  status = 200
+  force = true
+  conditions = {Host = ["btcsa.store"]}
+
+[[redirects]]
+  from = "/"
+  to = "/online/"
+  status = 200
+  force = true
+  conditions = {Host = ["btcsa.online"]}
+
+[[redirects]]
+  from = "/"
+  to = "/pro/"
+  status = 200
+  force = true
+  conditions = {Host = ["btcsa.pro"]}
+
+[[redirects]]
+  from = "/"
+  to = "/club/"
+  status = 200
+  force = true
+  conditions = {Host = ["btcsa.club"]}
+
+[[redirects]]
+  from = "/"
+  to = "/art/"
+  status = 200
+  force = true
+  conditions = {Host = ["btcsa.art"]}
+
+[[redirects]]
+  from = "/"
+  to = "/xyz/"
+  status = 200
+  force = true
+  conditions = {Host = ["btcsa.xyz"]}
 
 # Subfolder redirects for main domain (btcsaw.com) only
 [[redirects]]
