@@ -1,5 +1,2 @@
-# Main domain serves portfolio
-https://btcsaw.com/* https://btcsaw.com/:splat 200
-
 # API redirects for Netlify functions
 /api/* /.netlify/functions/:splat 200

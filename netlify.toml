@@ -13,226 +13,226 @@
 
 # Domain-specific rewrites - each BTCSA domain serves its own content directly
 [[redirects]]
-  from = "/"
-  to = "/cc/index.html"
+  from = "/*"
+  to = "/cc/:splat"
   status = 200
   force = true
-  conditions = {Host = ["btcsa.cc"]}
+  conditions = {Host = ["btcsa.cc", "www.btcsa.cc"]}
 
 [[redirects]]
-  from = "/"
-  to = "/email/index.html"
+  from = "/*"
+  to = "/email/:splat"
   status = 200
   force = true
-  conditions = {Host = ["btcsa.email"]}
+  conditions = {Host = ["btcsa.email", "www.btcsa.email"]}
 
 [[redirects]]
-  from = "/"
-  to = "/info/index.html"
+  from = "/*"
+  to = "/info/:splat"
   status = 200
   force = true
-  conditions = {Host = ["btcsa.info"]}
+  conditions = {Host = ["btcsa.info", "www.btcsa.info"]}
 
 [[redirects]]
-  from = "/"
-  to = "/life/index.html"
+  from = "/*"
+  to = "/life/:splat"
   status = 200
   force = true
-  conditions = {Host = ["btcsa.life"]}
+  conditions = {Host = ["btcsa.life", "www.btcsa.life"]}
 
 [[redirects]]
-  from = "/"
-  to = "/me/index.html"
+  from = "/*"
+  to = "/me/:splat"
   status = 200
   force = true
-  conditions = {Host = ["btcsa.me"]}
+  conditions = {Host = ["btcsa.me", "www.btcsa.me"]}
 
 [[redirects]]
-  from = "/"
-  to = "/biz/index.html"
+  from = "/*"
+  to = "/biz/:splat"
   status = 200
   force = true
-  conditions = {Host = ["btcsa.biz"]}
+  conditions = {Host = ["btcsa.biz", "www.btcsa.biz"]}
 
 [[redirects]]
-  from = "/"
-  to = "/world/index.html"
+  from = "/*"
+  to = "/world/:splat"
   status = 200
   force = true
-  conditions = {Host = ["btcsa.world"]}
+  conditions = {Host = ["btcsa.world", "www.btcsa.world"]}
 
 [[redirects]]
-  from = "/"
-  to = "/vip/index.html"
+  from = "/*"
+  to = "/vip/:splat"
   status = 200
   force = true
-  conditions = {Host = ["btcsa.vip"]}
+  conditions = {Host = ["btcsa.vip", "www.btcsa.vip"]}
 
 [[redirects]]
-  from = "/"
-  to = "/services/index.html"
+  from = "/*"
+  to = "/services/:splat"
   status = 200
   force = true
-  conditions = {Host = ["btcsa.services"]}
+  conditions = {Host = ["btcsa.services", "www.btcsa.services"]}
 
 [[redirects]]
-  from = "/"
-  to = "/agency/index.html"
+  from = "/*"
+  to = "/agency/:splat"
   status = 200
   force = true
-  conditions = {Host = ["btcsa.agency"]}
+  conditions = {Host = ["btcsa.agency", "www.btcsa.agency"]}
 
 [[redirects]]
-  from = "/"
-  to = "/shop/index.html"
+  from = "/*"
+  to = "/shop/:splat"
   status = 200
   force = true
-  conditions = {Host = ["btcsa.shop"]}
+  conditions = {Host = ["btcsa.shop", "www.btcsa.shop"]}
 
 [[redirects]]
-  from = "/"
-  to = "/store/index.html"
+  from = "/*"
+  to = "/store/:splat"
   status = 200
   force = true
-  conditions = {Host = ["btcsa.store"]}
+  conditions = {Host = ["btcsa.store", "www.btcsa.store"]}
 
 [[redirects]]
-  from = "/"
-  to = "/online/index.html"
+  from = "/*"
+  to = "/online/:splat"
   status = 200
   force = true
-  conditions = {Host = ["btcsa.online"]}
+  conditions = {Host = ["btcsa.online", "www.btcsa.online"]}
 
 [[redirects]]
-  from = "/"
-  to = "/pro/index.html"
+  from = "/*"
+  to = "/pro/:splat"
   status = 200
   force = true
-  conditions = {Host = ["btcsa.pro"]}
+  conditions = {Host = ["btcsa.pro", "www.btcsa.pro"]}
 
 [[redirects]]
-  from = "/"
-  to = "/club/index.html"
+  from = "/*"
+  to = "/club/:splat"
   status = 200
   force = true
-  conditions = {Host = ["btcsa.club"]}
+  conditions = {Host = ["btcsa.club", "www.btcsa.club"]}
 
 [[redirects]]
-  from = "/"
-  to = "/art/index.html"
+  from = "/*"
+  to = "/art/:splat"
   status = 200
   force = true
-  conditions = {Host = ["btcsa.art"]}
+  conditions = {Host = ["btcsa.art", "www.btcsa.art"]}
 
 [[redirects]]
-  from = "/"
-  to = "/xyz/index.html"
+  from = "/*"
+  to = "/xyz/:splat"
   status = 200
   force = true
-  conditions = {Host = ["btcsa.xyz"]}
+  conditions = {Host = ["btcsa.xyz", "www.btcsa.xyz"]}
 
 # Subfolder redirects for main domain (btcsaw.com) only
 [[redirects]]
   from = "/cc"
   to = "/cc/index.html"
   status = 200
-  conditions = {Host = ["btcsaw.com"]}
+  conditions = {Host = ["btcsaw.com", "www.btcsaw.com"]}
 
 [[redirects]]
   from = "/email"
   to = "/email/index.html"
   status = 200
-  conditions = {Host = ["btcsaw.com"]}
+  conditions = {Host = ["btcsaw.com", "www.btcsaw.com"]}
 
 [[redirects]]
   from = "/info"
   to = "/info/index.html"
   status = 200
-  conditions = {Host = ["btcsaw.com"]}
+  conditions = {Host = ["btcsaw.com", "www.btcsaw.com"]}
 
 [[redirects]]
   from = "/life"
   to = "/life/index.html"
   status = 200
-  conditions = {Host = ["btcsaw.com"]}
+  conditions = {Host = ["btcsaw.com", "www.btcsaw.com"]}
 
 [[redirects]]
   from = "/me"
   to = "/me/index.html"
   status = 200
-  conditions = {Host = ["btcsaw.com"]}
+  conditions = {Host = ["btcsaw.com", "www.btcsaw.com"]}
 
 [[redirects]]
   from = "/biz"
   to = "/biz/index.html"
   status = 200
-  conditions = {Host = ["btcsaw.com"]}
+  conditions = {Host = ["btcsaw.com", "www.btcsaw.com"]}
 
 [[redirects]]
   from = "/world"
   to = "/world/index.html"
   status = 200
-  conditions = {Host = ["btcsaw.com"]}
+  conditions = {Host = ["btcsaw.com", "www.btcsaw.com"]}
 
 [[redirects]]
   from = "/vip"
   to = "/vip/index.html"
   status = 200
-  conditions = {Host = ["btcsaw.com"]}
+  conditions = {Host = ["btcsaw.com", "www.btcsaw.com"]}
 
 [[redirects]]
   from = "/services"
   to = "/services/index.html"
   status = 200
-  conditions = {Host = ["btcsaw.com"]}
+  conditions = {Host = ["btcsaw.com", "www.btcsaw.com"]}
 
 [[redirects]]
   from = "/agency"
   to = "/agency/index.html"
   status = 200
-  conditions = {Host = ["btcsaw.com"]}
+  conditions = {Host = ["btcsaw.com", "www.btcsaw.com"]}
 
 [[redirects]]
   from = "/shop"
   to = "/shop/index.html"
   status = 200
-  conditions = {Host = ["btcsaw.com"]}
+  conditions = {Host = ["btcsaw.com", "www.btcsaw.com"]}
 
 [[redirects]]
   from = "/store"
   to = "/store/index.html"
   status = 200
-  conditions = {Host = ["btcsaw.com"]}
+  conditions = {Host = ["btcsaw.com", "www.btcsaw.com"]}
 
 [[redirects]]
   from = "/online"
   to = "/online/index.html"
   status = 200
-  conditions = {Host = ["btcsaw.com"]}
+  conditions = {Host = ["btcsaw.com", "www.btcsaw.com"]}
 
 [[redirects]]
   from = "/pro"
   to = "/pro/index.html"
   status = 200
-  conditions = {Host = ["btcsaw.com"]}
+  conditions = {Host = ["btcsaw.com", "www.btcsaw.com"]}
 
 [[redirects]]
   from = "/club"
   to = "/club/index.html"
   status = 200
-  conditions = {Host = ["btcsaw.com"]}
+  conditions = {Host = ["btcsaw.com", "www.btcsaw.com"]}
 
 [[redirects]]
   from = "/art"
   to = "/art/index.html"
   status = 200
-  conditions = {Host = ["btcsaw.com"]}
+  conditions = {Host = ["btcsaw.com", "www.btcsaw.com"]}
 
 [[redirects]]
   from = "/xyz"
   to = "/xyz/index.html"
   status = 200
-  conditions = {Host = ["btcsaw.com"]}
+  conditions = {Host = ["btcsaw.com", "www.btcsaw.com"]}
 
 [build.environment]
   NODE_VERSION = "18"
