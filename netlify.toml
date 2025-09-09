@@ -14,106 +14,242 @@
 # BTCSA domain routing - each domain serves its specific content
 # Add these domains as "Domain aliases" in Netlify dashboard
 [[redirects]]
+  from = "https://btcsa.cc/"
+  to = "/cc/index.html"
+  status = 200
+  force = true
+  host = "btcsa.cc"
+
+[[redirects]]
   from = "https://btcsa.cc/*"
   to = "/cc/:splat"
   status = 200
   force = true
+  host = "btcsa.cc"
+
+[[redirects]]
+  from = "https://btcsa.email/"
+  to = "/email/index.html"
+  status = 200
+  force = true
+  host = "btcsa.email"
 
 [[redirects]]
   from = "https://btcsa.email/*"
   to = "/email/:splat"
   status = 200
   force = true
+  host = "btcsa.email"
+
+[[redirects]]
+  from = "https://btcsa.info/"
+  to = "/info/index.html"
+  status = 200
+  force = true
+  host = "btcsa.info"
 
 [[redirects]]
   from = "https://btcsa.info/*"
   to = "/info/:splat"
   status = 200
   force = true
+  host = "btcsa.info"
+
+[[redirects]]
+  from = "https://btcsa.life/"
+  to = "/life/index.html"
+  status = 200
+  force = true
+  host = "btcsa.life"
 
 [[redirects]]
   from = "https://btcsa.life/*"
   to = "/life/:splat"
   status = 200
   force = true
+  host = "btcsa.life"
+
+[[redirects]]
+  from = "https://btcsa.me/"
+  to = "/me/index.html"
+  status = 200
+  force = true
+  host = "btcsa.me"
 
 [[redirects]]
   from = "https://btcsa.me/*"
   to = "/me/:splat"
   status = 200
   force = true
+  host = "btcsa.me"
+
+[[redirects]]
+  from = "https://btcsa.biz/"
+  to = "/biz/index.html"
+  status = 200
+  force = true
+  host = "btcsa.biz"
 
 [[redirects]]
   from = "https://btcsa.biz/*"
   to = "/biz/:splat"
   status = 200
   force = true
+  host = "btcsa.biz"
+
+[[redirects]]
+  from = "https://btcsa.world/"
+  to = "/world/index.html"
+  status = 200
+  force = true
+  host = "btcsa.world"
 
 [[redirects]]
   from = "https://btcsa.world/*"
   to = "/world/:splat"
   status = 200
   force = true
+  host = "btcsa.world"
+
+[[redirects]]
+  from = "https://btcsa.vip/"
+  to = "/vip/index.html"
+  status = 200
+  force = true
+  host = "btcsa.vip"
 
 [[redirects]]
   from = "https://btcsa.vip/*"
   to = "/vip/:splat"
   status = 200
   force = true
+  host = "btcsa.vip"
+
+[[redirects]]
+  from = "https://btcsa.services/"
+  to = "/services/index.html"
+  status = 200
+  force = true
+  host = "btcsa.services"
 
 [[redirects]]
   from = "https://btcsa.services/*"
   to = "/services/:splat"
   status = 200
   force = true
+  host = "btcsa.services"
+
+[[redirects]]
+  from = "https://btcsa.agency/"
+  to = "/agency/index.html"
+  status = 200
+  force = true
+  host = "btcsa.agency"
 
 [[redirects]]
   from = "https://btcsa.agency/*"
   to = "/agency/:splat"
   status = 200
   force = true
+  host = "btcsa.agency"
+
+[[redirects]]
+  from = "https://btcsa.shop/"
+  to = "/shop/index.html"
+  status = 200
+  force = true
+  host = "btcsa.shop"
 
 [[redirects]]
   from = "https://btcsa.shop/*"
   to = "/shop/:splat"
   status = 200
   force = true
+  host = "btcsa.shop"
+
+[[redirects]]
+  from = "https://btcsa.store/"
+  to = "/store/index.html"
+  status = 200
+  force = true
+  host = "btcsa.store"
 
 [[redirects]]
   from = "https://btcsa.store/*"
   to = "/store/:splat"
   status = 200
   force = true
+  host = "btcsa.store"
+
+[[redirects]]
+  from = "https://btcsa.online/"
+  to = "/online/index.html"
+  status = 200
+  force = true
+  host = "btcsa.online"
 
 [[redirects]]
   from = "https://btcsa.online/*"
   to = "/online/:splat"
   status = 200
   force = true
+  host = "btcsa.online"
+
+[[redirects]]
+  from = "https://btcsa.pro/"
+  to = "/pro/index.html"
+  status = 200
+  force = true
+  host = "btcsa.pro"
 
 [[redirects]]
   from = "https://btcsa.pro/*"
   to = "/pro/:splat"
   status = 200
   force = true
+  host = "btcsa.pro"
+
+[[redirects]]
+  from = "https://btcsa.club/"
+  to = "/club/index.html"
+  status = 200
+  force = true
+  host = "btcsa.club"
 
 [[redirects]]
   from = "https://btcsa.club/*"
   to = "/club/:splat"
   status = 200
   force = true
+  host = "btcsa.club"
+
+[[redirects]]
+  from = "https://btcsa.art/"
+  to = "/art/index.html"
+  status = 200
+  force = true
+  host = "btcsa.art"
 
 [[redirects]]
   from = "https://btcsa.art/*"
   to = "/art/:splat"
   status = 200
   force = true
+  host = "btcsa.art"
+
+[[redirects]]
+  from = "https://btcsa.xyz/"
+  to = "/xyz/index.html"
+  status = 200
+  force = true
+  host = "btcsa.xyz"
 
 [[redirects]]
   from = "https://btcsa.xyz/*"
   to = "/xyz/:splat"
   status = 200
   force = true
+  host = "btcsa.xyz"
 
 [[redirects]]
   from = "/cc"

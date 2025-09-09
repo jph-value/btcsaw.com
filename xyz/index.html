@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BTCSA.xyz - Bitcoin Innovation Lab</title>
+    <title>BTCSA.xyz - Bitcoin Project Incubator</title>
     <style>
         * {
             margin: 0;
@@ -147,6 +147,203 @@
                 transform: translateY(-100px);
             }
         }
+        
+        .incubator-section {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 25px;
+            padding: 40px;
+            margin: 40px 0;
+        }
+        
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin: 30px 0;
+        }
+        
+        .project-card {
+            background: rgba(0, 0, 0, 0.4);
+            border-radius: 20px;
+            padding: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+            border-color: #f7931a;
+            box-shadow: 0 15px 35px rgba(247, 147, 26, 0.2);
+        }
+        
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .project-icon {
+            font-size: 2.5rem;
+        }
+        
+        .project-stage {
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        
+        .project-stage.development {
+            background: #3498db;
+            color: white;
+        }
+        
+        .project-stage.beta {
+            background: #f39c12;
+            color: white;
+        }
+        
+        .project-stage.launched {
+            background: #27ae60;
+            color: white;
+        }
+        
+        .project-stage.concept {
+            background: #9b59b6;
+            color: white;
+        }
+        
+        .project-card h3 {
+            color: #f7931a;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+        
+        .project-metrics {
+            display: flex;
+            gap: 15px;
+            margin: 15px 0;
+            flex-wrap: wrap;
+        }
+        
+        .metric {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 5px 10px;
+            border-radius: 10px;
+            font-size: 0.9rem;
+        }
+        
+        .project-btn {
+            background: linear-gradient(45deg, #f7931a, #ffb347);
+            border: none;
+            border-radius: 10px;
+            padding: 10px 20px;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            margin-top: 15px;
+        }
+        
+        .project-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(247, 147, 26, 0.3);
+        }
+        
+        .incubator-stats {
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 25px;
+            padding: 40px;
+            margin: 40px 0;
+            text-align: center;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin: 30px 0;
+        }
+        
+        .stat-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 25px;
+            border: 1px solid rgba(247, 147, 26, 0.2);
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #f7931a;
+            margin-bottom: 10px;
+        }
+        
+        .stat-label {
+            font-size: 1rem;
+            opacity: 0.8;
+        }
+        
+        .application-section {
+            background: rgba(247, 147, 26, 0.1);
+            border-radius: 25px;
+            padding: 40px;
+            margin: 40px 0;
+            text-align: center;
+        }
+        
+        .application-form {
+            max-width: 600px;
+            margin: 30px auto;
+            text-align: left;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #f7931a;
+        }
+        
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            padding: 12px;
+            color: white;
+            font-size: 14px;
+        }
+        
+        .form-group textarea {
+            height: 120px;
+            resize: vertical;
+        }
+        
+        .apply-btn {
+            background: linear-gradient(45deg, #f7931a, #ffb347);
+            border: none;
+            border-radius: 25px;
+            padding: 15px 30px;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            font-size: 16px;
+        }
+        
+        .apply-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(247, 147, 26, 0.3);
+        }
     </style>
 </head>
 <body>
@@ -159,22 +356,163 @@
         </div>
 
         <div class="hero">
-            <div class="logo">🔮</div>
-            <h1>BTCSA.xyz</h1>
-            <p class="subtitle">Bitcoin Innovation Lab - Cutting-Edge Experiments & Future Tech</p>
+            <h1>Bitcoin Project Incubator</h1>
+            <p class="subtitle">Incubating the next generation of Bitcoin projects and startups</p>
         </div>
 
-        <div class="game-container">
-            <h2>🎮 Bitcoin Clicker Game</h2>
-            <p>Click the Bitcoin to mine satoshis! Test your clicking skills in this futuristic lab.</p>
+        <section class="incubator-section">
+            <h2>Project Portfolio</h2>
+            <p>Discover innovative Bitcoin projects in development and ready for launch</p>
             
-            <div class="bitcoin-clicker" onclick="clickBitcoin(event)">₿</div>
+            <div class="projects-grid">
+                <div class="project-card" data-stage="development">
+                    <div class="project-header">
+                        <div class="project-icon">⚡</div>
+                        <div class="project-stage development">Development</div>
+                    </div>
+                    <h3>Lightning Liquidity Pool</h3>
+                    <p>Decentralized liquidity management for Lightning Network channels with automated rebalancing.</p>
+                    <div class="project-metrics">
+                        <span class="metric">Funding: 2.5 BTC</span>
+                        <span class="metric">Team: 4 developers</span>
+                    </div>
+                    <button class="project-btn" onclick="viewProject('lightning-pool')">View Details</button>
+                </div>
+                
+                <div class="project-card" data-stage="beta">
+                    <div class="project-header">
+                        <div class="project-icon">🔐</div>
+                        <div class="project-stage beta">Beta Testing</div>
+                    </div>
+                    <h3>Bitcoin Privacy Mixer</h3>
+                    <p>Non-custodial Bitcoin mixing service using CoinJoin protocols for enhanced transaction privacy.</p>
+                    <div class="project-metrics">
+                        <span class="metric">Users: 1,200+</span>
+                        <span class="metric">Mixed: 45 BTC</span>
+                    </div>
+                    <button class="project-btn" onclick="viewProject('privacy-mixer')">View Details</button>
+                </div>
+                
+                <div class="project-card" data-stage="launched">
+                    <div class="project-header">
+                        <div class="project-icon">📊</div>
+                        <div class="project-stage launched">Launched</div>
+                    </div>
+                    <h3>DeFi Analytics Dashboard</h3>
+                    <p>Real-time Bitcoin DeFi analytics with yield farming opportunities and risk assessment tools.</p>
+                    <div class="project-metrics">
+                        <span class="metric">TVL: 120 BTC</span>
+                        <span class="metric">Users: 5,000+</span>
+                    </div>
+                    <button class="project-btn" onclick="viewProject('defi-analytics')">View Details</button>
+                </div>
+                
+                <div class="project-card" data-stage="concept">
+                    <div class="project-header">
+                        <div class="project-icon">🌐</div>
+                        <div class="project-stage concept">Concept</div>
+                    </div>
+                    <h3>Bitcoin Social Network</h3>
+                    <p>Decentralized social platform with Bitcoin micropayments for content creators and tipping.</p>
+                    <div class="project-metrics">
+                        <span class="metric">Funding Needed: 5 BTC</span>
+                        <span class="metric">Timeline: 8 months</span>
+                    </div>
+                    <button class="project-btn" onclick="viewProject('social-network')">View Details</button>
+                </div>
+                
+                <div class="project-card" data-stage="development">
+                    <div class="project-header">
+                        <div class="project-icon">🏪</div>
+                        <div class="project-stage development">Development</div>
+                    </div>
+                    <h3>Bitcoin Marketplace</h3>
+                    <p>P2P marketplace for digital goods with escrow services and reputation system built on Bitcoin.</p>
+                    <div class="project-metrics">
+                        <span class="metric">Progress: 65%</span>
+                        <span class="metric">Launch: Q2 2024</span>
+                    </div>
+                    <button class="project-btn" onclick="viewProject('marketplace')">View Details</button>
+                </div>
+                
+                <div class="project-card" data-stage="beta">
+                    <div class="project-header">
+                        <div class="project-icon">🎮</div>
+                        <div class="project-stage beta">Beta Testing</div>
+                    </div>
+                    <h3>Bitcoin Gaming Platform</h3>
+                    <p>Play-to-earn gaming ecosystem with Bitcoin rewards and NFT integration on Bitcoin sidechains.</p>
+                    <div class="project-metrics">
+                        <span class="metric">Games: 12</span>
+                        <span class="metric">Players: 3,500</span>
+                    </div>
+                    <button class="project-btn" onclick="viewProject('gaming-platform')">View Details</button>
+                </div>
+            </div>
+        </section>
+        
+        <section class="incubator-stats">
+            <h2>Incubator Metrics</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">24</div>
+                    <div class="stat-label">Active Projects</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">156 BTC</div>
+                    <div class="stat-label">Total Funding</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">8</div>
+                    <div class="stat-label">Successful Launches</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">450+</div>
+                    <div class="stat-label">Developers</div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="application-section">
+            <h2>Apply for Incubation</h2>
+            <p>Submit your Bitcoin project for review and potential funding</p>
             
-            <div class="score">Satoshis Mined: <span id="score">0</span></div>
-            <div style="color: #00d4ff;">Clicks per Second: <span id="cps">0</span></div>
-            
-            <button onclick="resetGame()" style="background: #ff6b35; border: none; padding: 10px 20px; border-radius: 10px; color: white; margin-top: 20px; cursor: pointer;">Reset Game</button>
-        </div>
+            <div class="application-form">
+                <div class="form-group">
+                    <label for="projectName">Project Name:</label>
+                    <input type="text" id="projectName" placeholder="Enter your project name">
+                </div>
+                
+                <div class="form-group">
+                    <label for="projectStage">Development Stage:</label>
+                    <select id="projectStage">
+                        <option value="">Select stage</option>
+                        <option value="concept">Concept/Idea</option>
+                        <option value="prototype">Prototype</option>
+                        <option value="development">Active Development</option>
+                        <option value="beta">Beta Testing</option>
+                        <option value="scaling">Ready to Scale</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="projectDescription">Project Description:</label>
+                    <textarea id="projectDescription" placeholder="Describe your Bitcoin project, its goals, and how it advances the Bitcoin ecosystem..."></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="fundingAmount">Funding Requested (BTC):</label>
+                    <input type="number" id="fundingAmount" placeholder="0.0" step="0.1">
+                </div>
+                
+                <div class="form-group">
+                    <label for="teamSize">Team Size:</label>
+                    <input type="number" id="teamSize" placeholder="Number of team members">
+                </div>
+                
+                <button class="apply-btn" onclick="submitApplication()">Submit Application</button>
+            </div>
+        </section>
         
         <div style="text-align: center;">
             <a href="/" class="back-button">← Back to Portfolio</a>
@@ -182,37 +520,87 @@
     </div>
 
     <script>
-        let score = 0;
-        let clicks = [];
+        // Project incubator functionality
         
-        function clickBitcoin(event) {
-            score += Math.floor(Math.random() * 10) + 1;
-            document.getElementById('score').textContent = score;
+        function viewProject(projectId) {
+            const projectDetails = {
+                'lightning-pool': {
+                    name: 'Lightning Liquidity Pool',
+                    description: 'Advanced liquidity management system for Lightning Network channels with automated rebalancing algorithms.',
+                    stage: 'Development',
+                    funding: '2.5 BTC',
+                    team: '4 experienced Lightning developers',
+                    timeline: 'Beta launch Q1 2024'
+                },
+                'privacy-mixer': {
+                    name: 'Bitcoin Privacy Mixer',
+                    description: 'Non-custodial Bitcoin mixing service using CoinJoin protocols for enhanced transaction privacy.',
+                    stage: 'Beta Testing',
+                    funding: 'Self-funded',
+                    team: '6 privacy-focused developers',
+                    timeline: 'Public launch Q4 2023'
+                },
+                'defi-analytics': {
+                    name: 'DeFi Analytics Dashboard',
+                    description: 'Real-time Bitcoin DeFi analytics with yield farming opportunities and risk assessment tools.',
+                    stage: 'Launched',
+                    funding: '8.2 BTC raised',
+                    team: '12 full-stack developers',
+                    timeline: 'Live since Q2 2023'
+                },
+                'social-network': {
+                    name: 'Bitcoin Social Network',
+                    description: 'Decentralized social platform with Bitcoin micropayments for content creators and tipping.',
+                    stage: 'Concept',
+                    funding: 'Seeking 5 BTC',
+                    team: '3 core team members',
+                    timeline: '18 month development cycle'
+                },
+                'marketplace': {
+                    name: 'Bitcoin Marketplace',
+                    description: 'P2P marketplace for digital goods with escrow services and reputation system built on Bitcoin.',
+                    stage: 'Development',
+                    funding: '4.1 BTC',
+                    team: '8 developers',
+                    timeline: 'Launch Q2 2024'
+                },
+                'gaming-platform': {
+                    name: 'Bitcoin Gaming Platform',
+                    description: 'Play-to-earn gaming ecosystem with Bitcoin rewards and NFT integration on Bitcoin sidechains.',
+                    stage: 'Beta Testing',
+                    funding: '6.8 BTC',
+                    team: '15 game developers',
+                    timeline: 'Full launch Q1 2024'
+                }
+            };
             
-            // Add floating number animation
-            const floatingNum = document.createElement('div');
-            floatingNum.className = 'floating-numbers';
-            floatingNum.textContent = '+' + (Math.floor(Math.random() * 10) + 1);
-            floatingNum.style.left = (event.clientX - 20) + 'px';
-            floatingNum.style.top = (event.clientY - 50) + 'px';
-            document.body.appendChild(floatingNum);
-            
-            setTimeout(() => {
-                document.body.removeChild(floatingNum);
-            }, 1000);
-            
-            // Track clicks for CPS calculation
-            const now = Date.now();
-            clicks.push(now);
-            clicks = clicks.filter(time => now - time < 1000);
-            document.getElementById('cps').textContent = clicks.length;
+            const project = projectDetails[projectId];
+            if (project) {
+                alert(`${project.name}\n\nDescription: ${project.description}\n\nStage: ${project.stage}\nFunding: ${project.funding}\nTeam: ${project.team}\nTimeline: ${project.timeline}`);
+            }
         }
         
-        function resetGame() {
-            score = 0;
-            clicks = [];
-            document.getElementById('score').textContent = '0';
-            document.getElementById('cps').textContent = '0';
+        function submitApplication() {
+            const projectName = document.getElementById('projectName').value;
+            const projectStage = document.getElementById('projectStage').value;
+            const projectDescription = document.getElementById('projectDescription').value;
+            const fundingAmount = document.getElementById('fundingAmount').value;
+            const teamSize = document.getElementById('teamSize').value;
+            
+            if (!projectName || !projectStage || !projectDescription) {
+                alert('Please fill in all required fields.');
+                return;
+            }
+            
+            // Simulate form submission
+            alert(`Application submitted successfully!\n\nProject: ${projectName}\nStage: ${projectStage}\nFunding Requested: ${fundingAmount} BTC\nTeam Size: ${teamSize}\n\nOur team will review your application and contact you within 5-7 business days.`);
+            
+            // Clear form
+            document.getElementById('projectName').value = '';
+            document.getElementById('projectStage').value = '';
+            document.getElementById('projectDescription').value = '';
+            document.getElementById('fundingAmount').value = '';
+            document.getElementById('teamSize').value = '';
         }
     </script>
     <script src="../global-banners.js"></script>
