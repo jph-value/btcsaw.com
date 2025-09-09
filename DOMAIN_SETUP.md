@@ -1,13 +1,15 @@
 # BTCSA Domain Management Strategy
 
-## Current Setup
-- **Main Domain:** btcsaw.com (Netlify project with SSL)
-- **17 BTCSA Domains:** btcsa.cc, btcsa.email, btcsa.info, etc.
+## Current Issue
+- **Problem:** btcsa.cc shows "Not secure" and displays main portfolio instead of CC page
+- **Root Cause:** Domain aliases not configured in Netlify dashboard
+- **Portfolio Tiles:** Fixed to redirect instead of copying text
 
-## Recommended Approach: Single Project + Domain Aliases
+## Required Actions
 
-### Step 1: Add Domain Aliases in Netlify
-In your Netlify dashboard → Domain settings → Add domain alias:
+### Step 1: Add Domain Aliases in Netlify Dashboard
+**CRITICAL:** You must manually add these domains in Netlify:
+Site Settings → Domain management → Add domain alias:
 
 ```
 btcsa.cc
@@ -29,35 +31,32 @@ btcsa.art
 btcsa.xyz
 ```
 
-### Step 2: DNS Configuration
-For each BTCSA domain, set DNS records:
+### Step 2: DNS Configuration (After Step 1)
+For each BTCSA domain, point DNS to your Netlify site:
 ```
 Type: CNAME
-Name: @
-Value: btcsaw.netlify.app
+Name: @ (or www)
+Value: [your-netlify-site].netlify.app
 ```
 
-### Step 3: Domain Routing (Already Configured)
-The `netlify.toml` file routes each domain to its folder:
-- `btcsa.cc` → `/cc/index.html`
-- `btcsa.email` → `/email/index.html`
+### Step 3: Verify Domain Routing
+The `netlify.toml` already configures routing:
+- `btcsa.cc/*` → `/cc/:splat` (status 200)
+- `btcsa.email/*` → `/email/:splat` (status 200)
 - etc.
 
-## Alternative Approaches
+## Current Status
+1. ✅ Fixed portfolio tile click behavior (now redirects instead of copying)
+2. ✅ Enhanced text contrast across all domain pages
+3. ✅ Restructured BTCSA.vip initiatives into Local and Systemic R&D
+4. ✅ Pushed all changes to main branch
+5. ⚠️ **MANUAL ACTION REQUIRED:** Add domain aliases in Netlify dashboard
+6. ⚠️ **MANUAL ACTION REQUIRED:** Configure DNS for each BTCSA domain
 
-### Option 2: Separate Netlify Projects
-- **Pros:** Complete isolation, custom SSL per domain
-- **Cons:** 17 separate deployments, complex management, higher cost
-
-### Option 3: DNS-Level Routing
-- **Pros:** No Netlify redirects needed
-- **Cons:** Requires advanced DNS provider, more complex setup
-
-## Implementation Priority
-1. ✅ Fix current redirect issue (remove btcsa-platform.netlify.app)
-2. 🔄 Add domain aliases in Netlify dashboard
-3. 🔄 Configure DNS for each BTCSA domain
-4. 🔄 Test all domain routing
+## Next Steps After Domain Configuration
+- Test each domain (btcsa.cc, btcsa.email, etc.)
+- Verify SSL certificates are issued automatically
+- Confirm proper routing to subdirectories
 
 ## Benefits of Recommended Approach
 - Single codebase and deployment

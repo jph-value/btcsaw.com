@@ -114,39 +114,12 @@ function initializeFeatureCards() {
 // Domain card interactions
 function initializeDomainCards() {
     document.querySelectorAll('.domain-card').forEach(card => {
-        card.addEventListener('click', function() {
-            const domainName = this.querySelector('.domain-name').textContent;
-            
-            // Create a temporary element to copy domain name
-            const tempElement = document.createElement('textarea');
-            tempElement.value = domainName;
-            document.body.appendChild(tempElement);
-            tempElement.select();
-            
-            try {
-                document.execCommand('copy');
-                
-                // Show feedback
-                const originalContent = this.innerHTML;
-                this.innerHTML = `
-                    <div class="domain-name">✓ Copied!</div>
-                    <div class="domain-purpose">${domainName}</div>
-                `;
-                
-                setTimeout(() => {
-                    this.innerHTML = originalContent;
-                }, 1500);
-                
-            } catch (err) {
-                console.log('Copy failed:', err);
-            }
-            
-            document.body.removeChild(tempElement);
-        });
+        // Remove the click event listener that copies text
+        // The cards should use their href attribute for navigation
         
         // Add hover effect
         card.style.cursor = 'pointer';
-        card.title = 'Click to copy domain name';
+        card.title = 'Click to visit domain showcase';
     });
 }
 
