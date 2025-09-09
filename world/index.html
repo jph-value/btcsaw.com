@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BTCSA Domain - Coming Soon</title>
+    <title>BTCSA.world - Global Bitcoin Platform</title>
     <style>
         * {
             margin: 0;
@@ -13,36 +13,53 @@
         
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 25%, #667eea 50%, #764ba2 75%, #f093fb 100%);
             color: white;
             min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            margin: 0;
         }
         
         .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .hero {
             text-align: center;
-            max-width: 600px;
-            padding: 40px;
-            background: rgba(255, 255, 255, 0.1);
+            padding: 100px 20px;
+            background: rgba(0, 0, 0, 0.4);
             backdrop-filter: blur(20px);
             border-radius: 25px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            margin: 40px 0;
+            border: 1px solid rgba(255, 255, 255, 0.3);
         }
         
         .logo {
-            font-size: 4rem;
+            font-size: 6rem;
             margin-bottom: 20px;
+            animation: rotate 10s linear infinite;
+        }
+        
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
         
         h1 {
-            font-size: 3rem;
+            font-size: 4rem;
             margin-bottom: 20px;
-            background: linear-gradient(45deg, #f7931a, #ffb347);
+            background: linear-gradient(45deg, #4facfe, #00f2fe, #667eea, #764ba2, #f093fb);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            background-size: 200% 200%;
+            animation: gradientShift 3s ease-in-out infinite;
+        }
+        
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
         }
         
         .subtitle {
@@ -70,31 +87,457 @@
             box-shadow: 0 10px 25px rgba(247, 147, 26, 0.3);
         }
         
-        .coming-soon {
-            background: rgba(247, 147, 26, 0.1);
-            border-radius: 15px;
+        .global-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin: 60px 0;
+        }
+        
+        .stat-card {
+            background: rgba(0, 0, 0, 0.4);
+            border-radius: 20px;
             padding: 30px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-10px) scale(1.05);
+            background: rgba(0, 0, 0, 0.6);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            background: linear-gradient(45deg, #4facfe, #00f2fe);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .world-map {
+            background: rgba(79, 172, 254, 0.1);
+            border-radius: 25px;
+            padding: 50px;
+            margin: 60px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .map-container {
+            position: relative;
+            display: inline-block;
+            font-size: 8rem;
             margin: 30px 0;
+        }
+        
+        .pulse-dot {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: #00f2fe;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% {
+                transform: scale(0.8);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(1.2);
+                opacity: 0.7;
+            }
+            100% {
+                transform: scale(0.8);
+                opacity: 1;
+            }
+        }
+        
+        .regions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+        
+        .region-card {
+            background: rgba(0, 0, 0, 0.4);
+            border-radius: 20px;
+            padding: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .region-card:hover {
+            background: rgba(0, 0, 0, 0.6);
+            transform: translateY(-8px);
+        }
+        
+        .region-flag {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            display: block;
+        }
+        
+        .region-stats {
+            display: flex;
+            justify-content: space-between;
+            margin: 15px 0;
+            font-size: 0.9rem;
+        }
+        
+        .initiatives-section {
+            background: rgba(240, 147, 251, 0.1);
+            border-radius: 25px;
+            padding: 50px;
+            margin: 60px 0;
+        }
+        
+        .initiatives-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .initiative-card {
+            background: rgba(0, 0, 0, 0.4);
+            border-radius: 20px;
+            padding: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .initiative-card:hover {
+            background: rgba(0, 0, 0, 0.6);
+            transform: translateY(-10px);
+        }
+        
+        .initiative-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+        
+        .progress-bar {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            height: 10px;
+            margin: 15px 0;
+            overflow: hidden;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #4facfe, #00f2fe);
+            border-radius: 10px;
+            transition: width 2s ease;
+        }
+        
+        @media (max-width: 768px) {
+            h1 { font-size: 2.8rem; }
+            .logo { font-size: 4rem; }
+            .global-stats { grid-template-columns: repeat(2, 1fr); }
+            .regions-grid { grid-template-columns: 1fr; }
+            .initiatives-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
-    <!-- Disclaimer Banner -->
-    <div style="background: linear-gradient(135deg, #ff6b35, #f7931a); color: white; text-align: center; padding: 8px 0; font-size: 14px; font-weight: 500; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
-        ⚠️ PRESENTATION ONLY: No functional products or services are currently available. This is a conceptual showcase.
-    </div>
+    <!-- Banners will be injected by global-banners.js -->
 
     <div class="container">
-        <div class="logo">🚀</div>
-        <h1>Coming Soon</h1>
-        <p class="subtitle">This BTCSA domain showcase is under development</p>
-        
-        <div class="coming-soon">
-            <h3 style="color: #f7931a; margin-bottom: 15px;">Interactive Showcase In Progress</h3>
-            <p>We're building an amazing interactive experience for this domain. Check back soon to see the full potential of this Bitcoin service platform.</p>
+        <div class="hero">
+            <div class="logo">🌍</div>
+            <h1>BTCSA.world</h1>
+            <p class="subtitle">Global Bitcoin Platform<br>Connecting the worldwide Bitcoin community and driving global adoption</p>
+            
+            <a href="#stats" class="cta-button">Explore Global Impact</a>
+            <a href="/" class="back-button">← Back to Portfolio</a>
+        </div>
+
+        <div class="global-stats" id="stats">
+            <div class="stat-card" onclick="viewStat('users')">
+                <div class="stat-number" id="userCount">2.1M</div>
+                <div>Global Users</div>
+            </div>
+            
+            <div class="stat-card" onclick="viewStat('countries')">
+                <div class="stat-number" id="countryCount">195</div>
+                <div>Countries</div>
+            </div>
+            
+            <div class="stat-card" onclick="viewStat('transactions')">
+                <div class="stat-number" id="txCount">$847M</div>
+                <div>Total Volume</div>
+            </div>
+            
+            <div class="stat-card" onclick="viewStat('nodes')">
+                <div class="stat-number" id="nodeCount">15,432</div>
+                <div>Network Nodes</div>
+            </div>
+            
+            <div class="stat-card" onclick="viewStat('merchants')">
+                <div class="stat-number" id="merchantCount">89,567</div>
+                <div>Merchants</div>
+            </div>
+            
+            <div class="stat-card" onclick="viewStat('education')">
+                <div class="stat-number" id="educationCount">456K</div>
+                <div>Educated Users</div>
+            </div>
         </div>
         
-        <a href="/" class="back-button">← Back to Portfolio</a>
+        <div class="world-map">
+            <h2>🌍 Bitcoin Global Network</h2>
+            <p>Real-time activity across the Bitcoin ecosystem worldwide</p>
+            
+            <div class="map-container">
+                🌍
+                <div class="pulse-dot" style="top: 30%; left: 20%;"></div>
+                <div class="pulse-dot" style="top: 45%; left: 50%;"></div>
+                <div class="pulse-dot" style="top: 25%; left: 75%;"></div>
+                <div class="pulse-dot" style="top: 60%; left: 15%;"></div>
+                <div class="pulse-dot" style="top: 70%; left: 80%;"></div>
+            </div>
+            
+            <div style="text-align: center; margin: 30px 0;">
+                <button class="cta-button" onclick="exploreMap()">🗺️ Interactive Map</button>
+                <button class="cta-button" onclick="liveActivity()">⚡ Live Activity Feed</button>
+            </div>
+        </div>
+        
+        <div class="regions-grid">
+            <div class="region-card" onclick="exploreRegion('americas')">
+                <span class="region-flag">🌎</span>
+                <h3>Americas</h3>
+                <p>Leading Bitcoin adoption with strong institutional investment and regulatory clarity.</p>
+                <div class="region-stats">
+                    <div>Users: 687K</div>
+                    <div>Volume: $312M</div>
+                    <div>Growth: +23%</div>
+                </div>
+            </div>
+            
+            <div class="region-card" onclick="exploreRegion('europe')">
+                <span class="region-flag">🌍</span>
+                <h3>Europe</h3>
+                <p>Progressive Bitcoin integration with comprehensive regulatory frameworks and innovation hubs.</p>
+                <div class="region-stats">
+                    <div>Users: 543K</div>
+                    <div>Volume: $198M</div>
+                    <div>Growth: +18%</div>
+                </div>
+            </div>
+            
+            <div class="region-card" onclick="exploreRegion('asia')">
+                <span class="region-flag">🌏</span>
+                <h3>Asia Pacific</h3>
+                <p>Rapid Bitcoin growth with emerging market adoption and technological innovation leadership.</p>
+                <div class="region-stats">
+                    <div>Users: 789K</div>
+                    <div>Volume: $267M</div>
+                    <div>Growth: +34%</div>
+                </div>
+            </div>
+            
+            <div class="region-card" onclick="exploreRegion('africa')">
+                <span class="region-flag">🌍</span>
+                <h3>Africa & Middle East</h3>
+                <p>Bitcoin as financial inclusion tool with mobile-first adoption and remittance solutions.</p>
+                <div class="region-stats">
+                    <div>Users: 234K</div>
+                    <div>Volume: $89M</div>
+                    <div>Growth: +67%</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="initiatives-section">
+            <h2>🎆 Global Bitcoin Initiatives</h2>
+            <p>Worldwide projects driving Bitcoin adoption and education</p>
+            
+            <div class="initiatives-grid">
+                <div class="initiative-card" onclick="viewInitiative('education')">
+                    <span class="initiative-icon">🎓</span>
+                    <h3>Bitcoin Education Program</h3>
+                    <p>Comprehensive Bitcoin education reaching universities, businesses, and communities worldwide.</p>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 78%;"></div>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; font-size: 0.9rem;">
+                        <span>Progress: 78%</span>
+                        <span>456,789 graduates</span>
+                    </div>
+                </div>
+                
+                <div class="initiative-card" onclick="viewInitiative('merchant')">
+                    <span class="initiative-icon">🏢</span>
+                    <h3>Merchant Adoption Drive</h3>
+                    <p>Supporting businesses worldwide to integrate Bitcoin payments and treasury management.</p>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 65%;"></div>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; font-size: 0.9rem;">
+                        <span>Progress: 65%</span>
+                        <span>89,567 merchants</span>
+                    </div>
+                </div>
+                
+                <div class="initiative-card" onclick="viewInitiative('infrastructure')">
+                    <span class="initiative-icon">⚡</span>
+                    <h3>Lightning Network Expansion</h3>
+                    <p>Building global Lightning Network infrastructure for instant, low-cost Bitcoin transactions.</p>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 82%;"></div>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; font-size: 0.9rem;">
+                        <span>Progress: 82%</span>
+                        <span>15,432 nodes</span>
+                    </div>
+                </div>
+                
+                <div class="initiative-card" onclick="viewInitiative('development')">
+                    <span class="initiative-icon">🛠️</span>
+                    <h3>Open Source Development</h3>
+                    <p>Supporting Bitcoin Core development and ecosystem tools with global developer community.</p>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 91%;"></div>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; font-size: 0.9rem;">
+                        <span>Progress: 91%</span>
+                        <span>2,847 contributors</span>
+                    </div>
+                </div>
+                
+                <div class="initiative-card" onclick="viewInitiative('research')">
+                    <span class="initiative-icon">🔬</span>
+                    <h3>Bitcoin Research Network</h3>
+                    <p>Academic research partnerships studying Bitcoin's economic and social impact globally.</p>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 56%;"></div>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; font-size: 0.9rem;">
+                        <span>Progress: 56%</span>
+                        <span>127 universities</span>
+                    </div>
+                </div>
+                
+                <div class="initiative-card" onclick="viewInitiative('sustainability')">
+                    <span class="initiative-icon">🌱</span>
+                    <h3>Sustainable Mining Initiative</h3>
+                    <p>Promoting renewable energy adoption in Bitcoin mining operations worldwide.</p>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 73%;"></div>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; font-size: 0.9rem;">
+                        <span>Progress: 73%</span>
+                        <span>58% renewable energy</span>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+
+    <script>
+        // Animate counters on page load
+        function animateCounter(elementId, targetValue, suffix = '') {
+            const element = document.getElementById(elementId);
+            const numericValue = parseFloat(targetValue.replace(/[^0-9.]/g, ''));
+            const duration = 2000;
+            const steps = 60;
+            const increment = numericValue / steps;
+            let current = 0;
+            
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= numericValue) {
+                    current = numericValue;
+                    clearInterval(timer);
+                }
+                
+                let displayValue;
+                if (targetValue.includes('M')) {
+                    displayValue = (current / 1000000).toFixed(1) + 'M';
+                } else if (targetValue.includes('K')) {
+                    displayValue = (current / 1000).toFixed(0) + 'K';
+                } else if (targetValue.includes('$')) {
+                    displayValue = '$' + (current / 1000000).toFixed(0) + 'M';
+                } else {
+                    displayValue = Math.floor(current).toLocaleString();
+                }
+                
+                element.textContent = displayValue;
+            }, duration / steps);
+        }
+        
+        function viewStat(statType) {
+            const stats = {
+                users: 'Global Users: 2.1 million Bitcoin users worldwide across 195 countries, representing a 34% growth year-over-year with strong adoption in emerging markets.',
+                countries: 'Global Reach: Bitcoin is actively used in all 195 countries worldwide, with regulatory frameworks established in 89 countries and growing institutional adoption.',
+                transactions: 'Transaction Volume: $847 million in Bitcoin transactions processed through our global network, representing real economic activity and value transfer.',
+                nodes: 'Network Nodes: 15,432 Bitcoin nodes worldwide ensuring network decentralization, security, and resilience across all continents.',
+                merchants: 'Merchant Network: 89,567 merchants globally accepting Bitcoin payments, from small businesses to major corporations across all industries.',
+                education: 'Education Impact: 456,000 individuals completed Bitcoin education programs through our global initiative, spanning 127 universities and institutions.'
+            };
+            
+            alert(`${stats[statType]}\n\nThis would open detailed analytics dashboard with real-time data, geographic breakdowns, and trend analysis.`);
+        }
+        
+        function exploreMap() {
+            alert(`🗺️ Interactive Global Bitcoin Map\n\n🌍 Features:\n• Real-time transaction visualization\n• Node distribution mapping\n• Regional adoption metrics\n• Lightning Network topology\n• Mining pool locations\n• Regulatory status by country\n\nThis would open a comprehensive interactive world map showing live Bitcoin network activity and adoption metrics.`);
+        }
+        
+        function liveActivity() {
+            alert(`⚡ Live Bitcoin Activity Feed\n\n🔥 Real-time updates:\n• Global transaction stream\n• New block discoveries\n• Lightning Network payments\n• Merchant adoptions\n• Educational milestones\n• Network statistics\n\nThis would open a live dashboard showing real-time Bitcoin network activity from around the world.`);
+        }
+        
+        function exploreRegion(region) {
+            const regions = {
+                americas: 'Americas: Leading Bitcoin adoption with 687K users and $312M volume. Strong institutional investment, regulatory clarity, and innovation hubs in USA, Canada, and Latin America.',
+                europe: 'Europe: Progressive Bitcoin integration with 543K users and $198M volume. Comprehensive regulatory frameworks, innovation hubs, and growing institutional adoption across EU.',
+                asia: 'Asia Pacific: Rapid Bitcoin growth with 789K users and $267M volume. Emerging market adoption, technological innovation leadership, and mobile-first Bitcoin solutions.',
+                africa: 'Africa & Middle East: Bitcoin as financial inclusion tool with 234K users and $89M volume. Mobile-first adoption, remittance solutions, and growing merchant networks.'
+            };
+            
+            alert(`${regions[region]}\n\nThis would open a detailed regional dashboard with country-specific data, adoption trends, regulatory updates, and local initiatives.`);
+        }
+        
+        function viewInitiative(initiative) {
+            const initiatives = {
+                education: 'Bitcoin Education Program: Comprehensive global education initiative reaching 456,789 graduates across 127 universities. Curriculum covers Bitcoin fundamentals, technical implementation, and economic impact.',
+                merchant: 'Merchant Adoption Drive: Supporting 89,567 businesses worldwide to integrate Bitcoin payments. Includes technical support, training, and treasury management guidance.',
+                infrastructure: 'Lightning Network Expansion: Building global Lightning infrastructure with 15,432 nodes. Enables instant, low-cost Bitcoin transactions for everyday commerce.',
+                development: 'Open Source Development: Supporting Bitcoin Core and ecosystem development with 2,847 global contributors. Funding critical infrastructure and protocol improvements.',
+                research: 'Bitcoin Research Network: Academic partnerships with 127 universities studying Bitcoin\'s economic and social impact. Publishing peer-reviewed research and policy recommendations.',
+                sustainability: 'Sustainable Mining Initiative: Promoting renewable energy adoption in Bitcoin mining. Currently 58% renewable energy usage with goal of 90% by 2030.'
+            };
+            
+            alert(`${initiatives[initiative]}\n\nThis would open a detailed initiative page with progress tracking, participant directory, resources, and ways to get involved.`);
+        }
+        
+        // Initialize animations on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                animateCounter('userCount', '2.1M');
+                animateCounter('countryCount', '195');
+                animateCounter('txCount', '$847M');
+                animateCounter('nodeCount', '15432');
+                animateCounter('merchantCount', '89567');
+                animateCounter('educationCount', '456K');
+            }, 500);
+        });
+    </script>
+    <script src="../global-banners.js"></script>
 </body>
 </html>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BTCSA Domain - Coming Soon</title>
+    <title>BTCSA.art - Bitcoin Digital Art Gallery</title>
     <style>
         * {
             margin: 0;
@@ -13,42 +13,59 @@
         
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #2d1b69 0%, #11998e 50%, #38ef7d 100%);
             color: white;
             min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            margin: 0;
         }
         
         .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .hero {
             text-align: center;
-            max-width: 600px;
-            padding: 40px;
-            background: rgba(255, 255, 255, 0.1);
+            padding: 80px 20px;
+            background: rgba(0, 0, 0, 0.4);
             backdrop-filter: blur(20px);
             border-radius: 25px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            margin: 40px 0;
+            border: 1px solid rgba(255, 255, 255, 0.3);
         }
         
         .logo {
-            font-size: 4rem;
+            font-size: 5rem;
             margin-bottom: 20px;
+            animation: colorShift 3s ease-in-out infinite;
         }
         
-        h1 {
-            font-size: 3rem;
-            margin-bottom: 20px;
-            background: linear-gradient(45deg, #f7931a, #ffb347);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+        @keyframes colorShift {
+            0%, 100% { filter: hue-rotate(0deg); }
+            50% { filter: hue-rotate(180deg); }
+        }
+        
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 1;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
         }
         
         .subtitle {
             font-size: 1.5rem;
             opacity: 0.8;
             margin-bottom: 40px;
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, #ff6b35, #f7931a, #38ef7d);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
         
         .back-button {
@@ -70,37 +87,268 @@
             box-shadow: 0 10px 25px rgba(247, 147, 26, 0.3);
         }
         
-        .coming-soon {
-            background: rgba(247, 147, 26, 0.1);
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 60px 0;
+        }
+        
+        .art-piece {
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 20px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        
+        .art-piece:hover {
+            transform: translateY(-10px) scale(1.02);
+            background: rgba(0, 0, 0, 0.6);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+        }
+        
+        .art-canvas {
+            width: 100%;
+            height: 200px;
             border-radius: 15px;
-            padding: 30px;
-            margin: 30px 0;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .art-canvas:hover {
+            transform: scale(1.05);
+        }
+        
+        .mint-button {
+            background: linear-gradient(45deg, #ff6b35, #f7931a);
+            border: none;
+            border-radius: 25px;
+            padding: 12px 25px;
+            color: white;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+        }
+        
+        .mint-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(247, 147, 26, 0.4);
+        }
+        
+        .create-art {
+            background: rgba(56, 239, 125, 0.1);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 40px 0;
+            text-align: center;
+        }
+        
+        .color-picker {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+        
+        .color-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 3px solid white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .color-btn:hover {
+            transform: scale(1.2);
+        }
+        
+        .canvas-area {
+            width: 300px;
+            height: 300px;
+            background: white;
+            border-radius: 15px;
+            margin: 20px auto;
+            position: relative;
+            cursor: crosshair;
+        }
+        
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            .gallery { grid-template-columns: 1fr; }
+            .canvas-area { width: 250px; height: 250px; }
         }
     </style>
 </head>
 <body>
-    <!-- Disclaimer Banner -->
-    <div style="background: linear-gradient(135deg, #ff6b35, #f7931a); color: white; text-align: center; padding: 8px 0; font-size: 14px; font-weight: 500; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
-        ⚠️ PRESENTATION ONLY: No functional products or services are currently available. This is a conceptual showcase.
-    </div>
+    <!-- Banners will be injected by global-banners.js -->
 
     <div class="container">
-        <!-- Purchase Banner -->
-        <div style="background: linear-gradient(135deg, #ff6b35, #f7931a); color: white; text-align: center; padding: 20px; margin: 40px 0; border-radius: 15px; border: 2px solid rgba(255, 255, 255, 0.2);">
-            <h3 style="margin-bottom: 10px; font-size: 1.5rem;">🏷️ This Full Domain Brand Bundle is Available for Purchase</h3>
-            <p>Complete BTCSA.art brand including domain, design, and concept. Contact: btcsaw@p-h.email</p>
+        <div class="hero">
+            <div class="logo">🎨</div>
+            <h1>BTCSA.art</h1>
+            <p class="subtitle">Bitcoin-Powered Digital Art Gallery & NFT Marketplace<br>Create, mint, and trade digital art on the Bitcoin blockchain</p>
+            
+            <a href="#gallery" class="cta-button">Explore Gallery</a>
+            <a href="/" class="back-button">← Back to Portfolio</a>
         </div>
 
-        <div class="logo">🚀</div>
-        <h1>Coming Soon</h1>
-        <p class="subtitle">This BTCSA domain showcase is under development</p>
-        
-        <div class="coming-soon">
-            <h3 style="color: #f7931a; margin-bottom: 15px;">Interactive Showcase In Progress</h3>
-            <p>We're building an amazing interactive experience for this domain. Check back soon to see the full potential of this Bitcoin service platform.</p>
+        <div class="gallery" id="gallery">
+            <div class="art-piece">
+                <div class="art-canvas" style="background: linear-gradient(45deg, #ff6b35, #f7931a);" onclick="viewArt(1)">🌅</div>
+                <h3>Bitcoin Sunrise</h3>
+                <p>Digital painting celebrating Bitcoin's dawn</p>
+                <p><strong>0.001 BTC</strong></p>
+                <button class="mint-button" onclick="mintNFT(1)">🪙 Mint NFT</button>
+            </div>
+            
+            <div class="art-piece">
+                <div class="art-canvas" style="background: linear-gradient(135deg, #667eea, #764ba2);" onclick="viewArt(2)">⚡</div>
+                <h3>Lightning Network</h3>
+                <p>Abstract representation of instant payments</p>
+                <p><strong>0.0015 BTC</strong></p>
+                <button class="mint-button" onclick="mintNFT(2)">🪙 Mint NFT</button>
+            </div>
+            
+            <div class="art-piece">
+                <div class="art-canvas" style="background: linear-gradient(45deg, #38ef7d, #11998e);" onclick="viewArt(3)">🔗</div>
+                <h3>Blockchain Genesis</h3>
+                <p>The first block in digital art form</p>
+                <p><strong>0.002 BTC</strong></p>
+                <button class="mint-button" onclick="mintNFT(3)">🪙 Mint NFT</button>
+            </div>
+            
+            <div class="art-piece">
+                <div class="art-canvas" style="background: linear-gradient(135deg, #ff9a9e, #fecfef);" onclick="viewArt(4)">💎</div>
+                <h3>Digital Diamond</h3>
+                <p>Rare crystalline Bitcoin formation</p>
+                <p><strong>0.005 BTC</strong></p>
+                <button class="mint-button" onclick="mintNFT(4)">🪙 Mint NFT</button>
+            </div>
+            
+            <div class="art-piece">
+                <div class="art-canvas" style="background: linear-gradient(45deg, #a8edea, #fed6e3);" onclick="viewArt(5)">🚀</div>
+                <h3>To The Moon</h3>
+                <p>Bitcoin's journey to astronomical heights</p>
+                <p><strong>0.0008 BTC</strong></p>
+                <button class="mint-button" onclick="mintNFT(5)">🪙 Mint NFT</button>
+            </div>
+            
+            <div class="art-piece">
+                <div class="art-canvas" style="background: linear-gradient(135deg, #ffecd2, #fcb69f);" onclick="viewArt(6)">🌐</div>
+                <h3>Global Network</h3>
+                <p>Bitcoin connecting the world</p>
+                <p><strong>0.0012 BTC</strong></p>
+                <button class="mint-button" onclick="mintNFT(6)">🪙 Mint NFT</button>
+            </div>
         </div>
         
-        <a href="/" class="back-button">← Back to Portfolio</a>
+        <div class="create-art">
+            <h2>🎨 Create Your Own Bitcoin Art</h2>
+            <p>Use our simple pixel art creator to make your own Bitcoin-themed NFT</p>
+            
+            <div class="color-picker">
+                <div class="color-btn" style="background: #ff6b35;" onclick="selectColor('#ff6b35')"></div>
+                <div class="color-btn" style="background: #f7931a;" onclick="selectColor('#f7931a')"></div>
+                <div class="color-btn" style="background: #38ef7d;" onclick="selectColor('#38ef7d')"></div>
+                <div class="color-btn" style="background: #667eea;" onclick="selectColor('#667eea')"></div>
+                <div class="color-btn" style="background: #ff9a9e;" onclick="selectColor('#ff9a9e')"></div>
+                <div class="color-btn" style="background: #000000;" onclick="selectColor('#000000')"></div>
+                <div class="color-btn" style="background: #ffffff;" onclick="selectColor('#ffffff')"></div>
+            </div>
+            
+            <canvas class="canvas-area" id="artCanvas" width="300" height="300"></canvas>
+            
+            <div style="margin-top: 20px;">
+                <button class="mint-button" onclick="clearCanvas()">🗑️ Clear Canvas</button>
+                <button class="mint-button" onclick="saveArt()">💾 Save Art</button>
+                <button class="mint-button" onclick="mintCustom()">🪙 Mint as NFT</button>
+            </div>
+        </div>
     </div>
+
+    <script>
+        let currentColor = '#f7931a';
+        let isDrawing = false;
+        const canvas = document.getElementById('artCanvas');
+        const ctx = canvas.getContext('2d');
+        
+        // Initialize canvas
+        ctx.fillStyle = 'white';
+        ctx.fillRect(0, 0, 300, 300);
+        
+        function selectColor(color) {
+            currentColor = color;
+            document.querySelectorAll('.color-btn').forEach(btn => {
+                btn.style.border = '3px solid white';
+            });
+            event.target.style.border = '3px solid #f7931a';
+        }
+        
+        canvas.addEventListener('mousedown', startDrawing);
+        canvas.addEventListener('mousemove', draw);
+        canvas.addEventListener('mouseup', stopDrawing);
+        canvas.addEventListener('mouseout', stopDrawing);
+        
+        function startDrawing(e) {
+            isDrawing = true;
+            draw(e);
+        }
+        
+        function draw(e) {
+            if (!isDrawing) return;
+            
+            const rect = canvas.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            ctx.fillStyle = currentColor;
+            ctx.beginPath();
+            ctx.arc(x, y, 5, 0, Math.PI * 2);
+            ctx.fill();
+        }
+        
+        function stopDrawing() {
+            isDrawing = false;
+        }
+        
+        function clearCanvas() {
+            ctx.fillStyle = 'white';
+            ctx.fillRect(0, 0, 300, 300);
+        }
+        
+        function saveArt() {
+            const link = document.createElement('a');
+            link.download = 'bitcoin-art.png';
+            link.href = canvas.toDataURL();
+            link.click();
+        }
+        
+        function viewArt(id) {
+            alert(`Viewing Bitcoin Art #${id}\n\nThis would open a full-screen gallery view with detailed information about the artwork, artist, and blockchain provenance.`);
+        }
+        
+        function mintNFT(id) {
+            alert(`Minting NFT #${id}\n\n🪙 Initiating Bitcoin NFT mint...\n⚡ Lightning payment processing...\n🔗 Recording on blockchain...\n\n✅ NFT successfully minted!\n\nThis would integrate with Bitcoin NFT protocols like Ordinals or RGB.`);
+        }
+        
+        function mintCustom() {
+            alert(`Minting Custom Art as NFT\n\n🎨 Processing your artwork...\n🪙 Creating Bitcoin NFT...\n⚡ Lightning payment: 0.001 BTC\n🔗 Inscribing on blockchain...\n\n✅ Your custom Bitcoin art NFT has been minted!\n\nNFT ID: #BTCSA${Date.now()}`);
+        }
+    </script>
+    <script src="../global-banners.js"></script>
 </body>
 </html>

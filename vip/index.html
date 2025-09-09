@@ -370,10 +370,8 @@
     </style>
 </head>
 <body>
+    <!-- Banners will be injected by global-banners.js -->
     <!-- Disclaimer Banner -->
-    <div style="background: linear-gradient(135deg, #ff6b35, #f7931a); color: white; text-align: center; padding: 8px 0; font-size: 14px; font-weight: 500; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
-        ⚠️ PRESENTATION ONLY: No functional products or services are currently available. This is a conceptual showcase.
-    </div>
 
     <header>
         <nav class="container">
@@ -428,33 +426,103 @@
                 </div>
             </div>
             
-            <div class="projects-grid">
-                <div class="project-card" onclick="openProject('education')">
-                    <div class="project-icon">🎓</div>
-                    <div class="project-title">Example: Global Education Access</div>
-                    <p>Conceptual Bitcoin-funded education infrastructure in underserved communities worldwide.</p>
-                    <div class="project-status status-proposal">Concept</div>
-                </div>
+            <!-- Local Initiatives Section -->
+            <div style="margin: 60px 0;">
+                <h3 style="text-align: center; margin-bottom: 30px; color: #3498db; font-size: 2.5rem;">🏘️ Local Initiatives</h3>
+                <p style="text-align: center; margin-bottom: 40px; font-size: 1.1rem; opacity: 0.9;">Direct community impact projects that address immediate local needs and create tangible improvements in people's daily lives.</p>
                 
-                <div class="project-card" onclick="openProject('healthcare')">
-                    <div class="project-icon">🏥</div>
-                    <div class="project-title">Example: Healthcare Equality</div>
-                    <p>Conceptual Bitcoin-funded mobile clinics and telemedicine for remote populations.</p>
-                    <div class="project-status status-proposal">Concept</div>
+                <div class="projects-grid">
+                    <div class="project-card" onclick="openProject('education')">
+                        <div class="project-icon">🎓</div>
+                        <div class="project-title">Community Education Centers</div>
+                        <p>Bitcoin-funded local learning hubs with digital literacy, vocational training, and educational resources for underserved neighborhoods.</p>
+                        <div class="project-status status-proposal">Concept</div>
+                    </div>
+                    
+                    <div class="project-card" onclick="openProject('healthcare')">
+                        <div class="project-icon">🏥</div>
+                        <div class="project-title">Mobile Health Clinics</div>
+                        <p>Bitcoin-funded mobile medical units providing primary healthcare, vaccinations, and health screenings to remote communities.</p>
+                        <div class="project-status status-proposal">Concept</div>
+                    </div>
+                    
+                    <div class="project-card" onclick="openProject('housing')">
+                        <div class="project-icon">🏠</div>
+                        <div class="project-title">Affordable Housing Co-ops</div>
+                        <p>Bitcoin-funded sustainable housing cooperatives providing affordable homes and community ownership models.</p>
+                        <div class="project-status status-proposal">Concept</div>
+                    </div>
+                    
+                    <div class="project-card" onclick="openProject('water')">
+                        <div class="project-icon">💧</div>
+                        <div class="project-title">Clean Water Infrastructure</div>
+                        <p>Bitcoin-funded water purification systems, wells, and distribution networks for communities lacking clean water access.</p>
+                        <div class="project-status status-proposal">Concept</div>
+                    </div>
+                    
+                    <div class="project-card" onclick="openProject('food')">
+                        <div class="project-icon">🌱</div>
+                        <div class="project-title">Community Gardens & Food Security</div>
+                        <p>Bitcoin-funded urban farming initiatives, community gardens, and food distribution programs for food-insecure areas.</p>
+                        <div class="project-status status-proposal">Concept</div>
+                    </div>
+                    
+                    <div class="project-card" onclick="openProject('energy')">
+                        <div class="project-icon">⚡</div>
+                        <div class="project-title">Renewable Energy Access</div>
+                        <p>Bitcoin-funded solar panels, micro-grids, and energy storage systems for communities without reliable electricity.</p>
+                        <div class="project-status status-proposal">Concept</div>
+                    </div>
                 </div>
+            </div>
+            
+            <!-- Systemic R&D Initiatives Section -->
+            <div style="margin: 60px 0; background: rgba(52, 152, 219, 0.05); border-radius: 25px; padding: 40px;">
+                <h3 style="text-align: center; margin-bottom: 30px; color: #3498db; font-size: 2.5rem;">🔬 Systemic R&D Initiatives</h3>
+                <p style="text-align: center; margin-bottom: 40px; font-size: 1.1rem; opacity: 0.9;">Research and development projects that create scalable solutions, policy frameworks, and technological innovations to support and amplify local initiatives worldwide.</p>
                 
-                <div class="project-card" onclick="openProject('housing')">
-                    <div class="project-icon">🏠</div>
-                    <div class="project-title">Example: Affordable Housing</div>
-                    <p>Conceptual sustainable housing solutions funded by Bitcoin for families in need.</p>
-                    <div class="project-status status-proposal">Concept</div>
-                </div>
-                
-                <div class="project-card" onclick="openProject('water')">
-                    <div class="project-icon">💧</div>
-                    <div class="project-title">Example: Clean Water Access</div>
-                    <p>Conceptual Bitcoin-funded water purification systems and infrastructure.</p>
-                    <div class="project-status status-proposal">Concept</div>
+                <div class="projects-grid">
+                    <div class="project-card" onclick="openProject('research-platform')">
+                        <div class="project-icon">🧬</div>
+                        <div class="project-title">Open Source Impact Research</div>
+                        <p>Bitcoin-funded research platform developing open-source methodologies, impact measurement tools, and best practices for community development.</p>
+                        <div class="project-status status-proposal">Concept</div>
+                    </div>
+                    
+                    <div class="project-card" onclick="openProject('policy-advocacy')">
+                        <div class="project-icon">🏛️</div>
+                        <div class="project-title">Policy & Advocacy Framework</div>
+                        <p>Bitcoin-funded policy research and advocacy programs to create supportive regulatory environments for community-led initiatives.</p>
+                        <div class="project-status status-proposal">Concept</div>
+                    </div>
+                    
+                    <div class="project-card" onclick="openProject('tech-infrastructure')">
+                        <div class="project-icon">💻</div>
+                        <div class="project-title">Technology Infrastructure R&D</div>
+                        <p>Bitcoin-funded development of scalable technology platforms, communication networks, and digital tools for community organizations.</p>
+                        <div class="project-status status-proposal">Concept</div>
+                    </div>
+                    
+                    <div class="project-card" onclick="openProject('training-systems')">
+                        <div class="project-icon">📚</div>
+                        <div class="project-title">Scalable Training Systems</div>
+                        <p>Bitcoin-funded development of training curricula, certification programs, and knowledge transfer systems for community leaders.</p>
+                        <div class="project-status status-proposal">Concept</div>
+                    </div>
+                    
+                    <div class="project-card" onclick="openProject('funding-mechanisms')">
+                        <div class="project-icon">🔄</div>
+                        <div class="project-title">Sustainable Funding Models</div>
+                        <p>Bitcoin-funded research into innovative funding mechanisms, impact bonds, and self-sustaining economic models for social initiatives.</p>
+                        <div class="project-status status-proposal">Concept</div>
+                    </div>
+                    
+                    <div class="project-card" onclick="openProject('global-coordination')">
+                        <div class="project-icon">🌐</div>
+                        <div class="project-title">Global Coordination Platform</div>
+                        <p>Bitcoin-funded development of coordination systems connecting local initiatives worldwide for knowledge sharing and resource optimization.</p>
+                        <div class="project-status status-proposal">Concept</div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -470,17 +538,35 @@
                 </div>
                 
                 <div class="form-group">
+                    <label for="projectType">Initiative Type:</label>
+                    <select id="projectType">
+                        <option value="">Select initiative type</option>
+                        <option value="local">Local Initiative - Direct Community Impact</option>
+                        <option value="systemic">Systemic R&D - Scalable Solutions & Research</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
                     <label for="projectCategory">Category:</label>
                     <select id="projectCategory">
                         <option value="">Select category</option>
-                        <option value="education">Education Access</option>
-                        <option value="healthcare">Healthcare Equality</option>
-                        <option value="housing">Affordable Housing</option>
-                        <option value="water">Clean Water & Sanitation</option>
-                        <option value="food">Food Security</option>
-                        <option value="technology">Digital Inclusion</option>
-                        <option value="environment">Environmental Justice</option>
-                        <option value="other">Other Social Initiative</option>
+                        <optgroup label="Local Initiatives">
+                            <option value="education">Community Education Centers</option>
+                            <option value="healthcare">Mobile Health Clinics</option>
+                            <option value="housing">Affordable Housing Co-ops</option>
+                            <option value="water">Clean Water Infrastructure</option>
+                            <option value="food">Food Security & Gardens</option>
+                            <option value="energy">Renewable Energy Access</option>
+                        </optgroup>
+                        <optgroup label="Systemic R&D">
+                            <option value="research">Impact Research & Methodology</option>
+                            <option value="policy">Policy & Advocacy Framework</option>
+                            <option value="technology">Technology Infrastructure</option>
+                            <option value="training">Scalable Training Systems</option>
+                            <option value="funding">Sustainable Funding Models</option>
+                            <option value="coordination">Global Coordination Platform</option>
+                        </optgroup>
+                        <option value="other">Other Initiative</option>
                     </select>
                 </div>
                 
@@ -692,5 +778,6 @@
             console.log('BTCSA Very Important Projects initialized');
         });
     </script>
+    <script src="../global-banners.js"></script>
 </body>
 </html>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BTCSA Domain - Coming Soon</title>
+    <title>BTCSA.pro - Bitcoin Professional Services</title>
     <style>
         * {
             margin: 0;
@@ -13,33 +13,43 @@
         
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
             color: white;
             min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            margin: 0;
         }
         
         .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .hero {
             text-align: center;
-            max-width: 600px;
-            padding: 40px;
-            background: rgba(255, 255, 255, 0.1);
+            padding: 80px 20px;
+            background: rgba(0, 0, 0, 0.4);
             backdrop-filter: blur(20px);
             border-radius: 25px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            margin: 40px 0;
+            border: 1px solid rgba(255, 255, 255, 0.3);
         }
         
         .logo {
-            font-size: 4rem;
+            font-size: 5rem;
             margin-bottom: 20px;
+            animation: pulse 2s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
         }
         
         h1 {
-            font-size: 3rem;
+            font-size: 3.5rem;
             margin-bottom: 20px;
-            background: linear-gradient(45deg, #f7931a, #ffb347);
+            background: linear-gradient(45deg, #667eea, #764ba2, #f093fb);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -70,31 +80,450 @@
             box-shadow: 0 10px 25px rgba(247, 147, 26, 0.3);
         }
         
-        .coming-soon {
-            background: rgba(247, 147, 26, 0.1);
-            border-radius: 15px;
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin: 60px 0;
+        }
+        
+        .service-card {
+            background: rgba(0, 0, 0, 0.4);
+            border-radius: 20px;
             padding: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            background: rgba(0, 0, 0, 0.6);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+        
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            display: block;
+            text-align: center;
+        }
+        
+        .service-features {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+        
+        .service-features li {
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .service-features li:before {
+            content: "✓";
+            color: #f093fb;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        
+        .consultation-form {
+            background: rgba(102, 126, 234, 0.1);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 40px 0;
+        }
+        
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
             margin: 30px 0;
+        }
+        
+        .form-field {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .form-field label {
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        
+        .form-field input, .form-field select, .form-field textarea {
+            padding: 12px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            background: rgba(0, 0, 0, 0.4);
+            color: white;
+            font-size: 14px;
+            font-family: inherit;
+        }
+        
+        .form-field input::placeholder, .form-field textarea::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+        
+        .form-field textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+        
+        .portfolio-showcase {
+            background: rgba(240, 147, 251, 0.1);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 40px 0;
+        }
+        
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+        
+        .portfolio-item {
+            background: rgba(0, 0, 0, 0.4);
+            border-radius: 15px;
+            padding: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .portfolio-item:hover {
+            background: rgba(0, 0, 0, 0.6);
+            transform: translateY(-5px);
+        }
+        
+        .portfolio-stats {
+            display: flex;
+            justify-content: space-between;
+            margin: 15px 0;
+            font-size: 0.9rem;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-value {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #f093fb;
+        }
+        
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            .services-grid { grid-template-columns: 1fr; }
+            .form-grid { grid-template-columns: 1fr; }
+            .portfolio-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
-    <!-- Disclaimer Banner -->
-    <div style="background: linear-gradient(135deg, #ff6b35, #f7931a); color: white; text-align: center; padding: 8px 0; font-size: 14px; font-weight: 500; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
-        ⚠️ PRESENTATION ONLY: No functional products or services are currently available. This is a conceptual showcase.
-    </div>
+    <!-- Banners will be injected by global-banners.js -->
 
     <div class="container">
-        <div class="logo">🚀</div>
-        <h1>Coming Soon</h1>
-        <p class="subtitle">This BTCSA domain showcase is under development</p>
-        
-        <div class="coming-soon">
-            <h3 style="color: #f7931a; margin-bottom: 15px;">Interactive Showcase In Progress</h3>
-            <p>We're building an amazing interactive experience for this domain. Check back soon to see the full potential of this Bitcoin service platform.</p>
+        <div class="hero">
+            <div class="logo">🏆</div>
+            <h1>BTCSA.pro</h1>
+            <p class="subtitle">Bitcoin Professional Services<br>Expert consulting, development, and strategic guidance for Bitcoin adoption</p>
+            
+            <a href="#services" class="cta-button">View Services</a>
+            <a href="/" class="back-button">← Back to Portfolio</a>
+        </div>
+
+        <div class="services-grid" id="services">
+            <div class="service-card" onclick="exploreService('consulting')">
+                <span class="service-icon">💼</span>
+                <h3>Bitcoin Consulting</h3>
+                <p>Strategic guidance for Bitcoin integration and adoption</p>
+                <ul class="service-features">
+                    <li>Bitcoin treasury strategy</li>
+                    <li>Regulatory compliance guidance</li>
+                    <li>Risk assessment & mitigation</li>
+                    <li>Implementation roadmaps</li>
+                    <li>Team training & education</li>
+                </ul>
+                <div style="text-align: center; margin-top: 20px;">
+                    <strong style="color: #f093fb;">Starting at $500/hour</strong>
+                </div>
+            </div>
+            
+            <div class="service-card" onclick="exploreService('development')">
+                <span class="service-icon">🛠️</span>
+                <h3>Bitcoin Development</h3>
+                <p>Custom Bitcoin applications and integrations</p>
+                <ul class="service-features">
+                    <li>Lightning Network integration</li>
+                    <li>Payment processing systems</li>
+                    <li>Wallet development</li>
+                    <li>Smart contract solutions</li>
+                    <li>API development & integration</li>
+                </ul>
+                <div style="text-align: center; margin-top: 20px;">
+                    <strong style="color: #f093fb;">Project-based pricing</strong>
+                </div>
+            </div>
+            
+            <div class="service-card" onclick="exploreService('audit')">
+                <span class="service-icon">🔍</span>
+                <h3>Security Audits</h3>
+                <p>Comprehensive Bitcoin security assessments</p>
+                <ul class="service-features">
+                    <li>Smart contract audits</li>
+                    <li>Infrastructure security review</li>
+                    <li>Wallet security assessment</li>
+                    <li>Penetration testing</li>
+                    <li>Compliance verification</li>
+                </ul>
+                <div style="text-align: center; margin-top: 20px;">
+                    <strong style="color: #f093fb;">$5,000 - $50,000</strong>
+                </div>
+            </div>
+            
+            <div class="service-card" onclick="exploreService('training')">
+                <span class="service-icon">🎓</span>
+                <h3>Enterprise Training</h3>
+                <p>Bitcoin education for teams and organizations</p>
+                <ul class="service-features">
+                    <li>Executive Bitcoin workshops</li>
+                    <li>Developer training programs</li>
+                    <li>Security best practices</li>
+                    <li>Regulatory compliance training</li>
+                    <li>Custom curriculum development</li>
+                </ul>
+                <div style="text-align: center; margin-top: 20px;">
+                    <strong style="color: #f093fb;">$2,000/day per trainer</strong>
+                </div>
+            </div>
         </div>
         
-        <a href="/" class="back-button">← Back to Portfolio</a>
+        <div class="consultation-form">
+            <h2>📞 Schedule Free Consultation</h2>
+            <p>Get expert advice tailored to your Bitcoin needs</p>
+            
+            <div class="form-grid">
+                <div class="form-field">
+                    <label>Full Name</label>
+                    <input type="text" id="fullName" placeholder="John Doe" required>
+                </div>
+                
+                <div class="form-field">
+                    <label>Company</label>
+                    <input type="text" id="company" placeholder="Your Company Inc.">
+                </div>
+                
+                <div class="form-field">
+                    <label>Email Address</label>
+                    <input type="email" id="email" placeholder="john@company.com" required>
+                </div>
+                
+                <div class="form-field">
+                    <label>Phone Number</label>
+                    <input type="tel" id="phone" placeholder="+1 (555) 123-4567">
+                </div>
+                
+                <div class="form-field">
+                    <label>Service Interest</label>
+                    <select id="serviceType" required>
+                        <option value="">Select a service</option>
+                        <option value="consulting">Bitcoin Consulting</option>
+                        <option value="development">Bitcoin Development</option>
+                        <option value="audit">Security Audits</option>
+                        <option value="training">Enterprise Training</option>
+                        <option value="multiple">Multiple Services</option>
+                    </select>
+                </div>
+                
+                <div class="form-field">
+                    <label>Project Budget</label>
+                    <select id="budget">
+                        <option value="">Select budget range</option>
+                        <option value="under-10k">Under $10,000</option>
+                        <option value="10k-50k">$10,000 - $50,000</option>
+                        <option value="50k-100k">$50,000 - $100,000</option>
+                        <option value="100k-500k">$100,000 - $500,000</option>
+                        <option value="over-500k">Over $500,000</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="form-field" style="margin: 20px 0;">
+                <label>Project Description</label>
+                <textarea id="projectDescription" placeholder="Tell us about your Bitcoin project, goals, and specific requirements..." required></textarea>
+            </div>
+            
+            <div style="text-align: center; margin: 30px 0;">
+                <button class="cta-button" onclick="submitConsultation()">🚀 Request Free Consultation</button>
+                <button class="cta-button" onclick="generateProposal()">📊 Generate Instant Proposal</button>
+            </div>
+        </div>
+        
+        <div class="portfolio-showcase">
+            <h2>🏆 Success Stories & Portfolio</h2>
+            <p>Proven results from our Bitcoin professional services</p>
+            
+            <div class="portfolio-grid">
+                <div class="portfolio-item" onclick="viewCase('fintech')">
+                    <h4>🏦 FinTech Bitcoin Integration</h4>
+                    <p>Helped a major financial institution integrate Bitcoin payments and treasury management.</p>
+                    <div class="portfolio-stats">
+                        <div class="stat-item">
+                            <div class="stat-value">$50M</div>
+                            <div>Bitcoin Treasury</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">6 months</div>
+                            <div>Implementation</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">99.9%</div>
+                            <div>Uptime</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item" onclick="viewCase('ecommerce')">
+                    <h4>🛍️ E-commerce Lightning Network</h4>
+                    <p>Built Lightning Network payment system for global e-commerce platform.</p>
+                    <div class="portfolio-stats">
+                        <div class="stat-item">
+                            <div class="stat-value">10,000+</div>
+                            <div>Daily Transactions</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">0.1%</div>
+                            <div>Transaction Fees</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">2 sec</div>
+                            <div>Settlement Time</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item" onclick="viewCase('enterprise')">
+                    <h4>🏢 Enterprise Bitcoin Training</h4>
+                    <p>Comprehensive Bitcoin education program for Fortune 500 company.</p>
+                    <div class="portfolio-stats">
+                        <div class="stat-item">
+                            <div class="stat-value">500+</div>
+                            <div>Employees Trained</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">95%</div>
+                            <div>Satisfaction Rate</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">3 weeks</div>
+                            <div>Training Duration</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item" onclick="viewCase('security')">
+                    <h4>🔒 Multi-Sig Wallet Security</h4>
+                    <p>Designed and audited enterprise-grade Bitcoin custody solution.</p>
+                    <div class="portfolio-stats">
+                        <div class="stat-item">
+                            <div class="stat-value">$100M+</div>
+                            <div>Assets Secured</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">Zero</div>
+                            <div>Security Incidents</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">24/7</div>
+                            <div>Monitoring</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+
+    <script>
+        function exploreService(service) {
+            const services = {
+                consulting: "Bitcoin Consulting: Strategic guidance for successful Bitcoin adoption. We help organizations develop comprehensive Bitcoin strategies, navigate regulatory requirements, and implement best practices for treasury management and operational integration.",
+                development: "Bitcoin Development: Custom Bitcoin applications and integrations. Our expert developers build Lightning Network solutions, payment processors, wallet applications, and smart contract systems tailored to your specific business needs.",
+                audit: "Security Audits: Comprehensive Bitcoin security assessments. We conduct thorough audits of smart contracts, infrastructure, wallets, and compliance systems to ensure the highest security standards and regulatory compliance.",
+                training: "Enterprise Training: Bitcoin education for teams and organizations. We deliver customized training programs covering Bitcoin fundamentals, security practices, regulatory compliance, and technical implementation for all skill levels."
+            };
+            
+            alert(`${services[service]}\n\nThis would open a detailed service page with case studies, pricing details, team profiles, and scheduling options for immediate consultation.`);
+        }
+        
+        function submitConsultation() {
+            const name = document.getElementById('fullName').value;
+            const company = document.getElementById('company').value;
+            const email = document.getElementById('email').value;
+            const service = document.getElementById('serviceType').value;
+            const budget = document.getElementById('budget').value;
+            const description = document.getElementById('projectDescription').value;
+            
+            if (!name || !email || !service || !description) {
+                alert('⚠️ Please fill in all required fields (Name, Email, Service, and Project Description).');
+                return;
+            }
+            
+            alert(`🚀 Consultation Request Submitted!\n\n💼 Service: ${service}\n🏢 Company: ${company || 'Individual'}\n💰 Budget: ${budget || 'To be discussed'}\n\n✅ Next Steps:\n• Expert review within 2 hours\n• Consultation scheduled within 24 hours\n• Custom proposal delivered within 48 hours\n\nConsultation ID: #BTCSA${Date.now()}\n\nOur Bitcoin experts will contact you shortly to discuss your project requirements and provide tailored recommendations.`);
+        }
+        
+        function generateProposal() {
+            const service = document.getElementById('serviceType').value;
+            const budget = document.getElementById('budget').value;
+            const description = document.getElementById('projectDescription').value;
+            
+            if (!service) {
+                alert('⚠️ Please select a service type to generate a proposal.');
+                return;
+            }
+            
+            const proposals = {
+                consulting: {
+                    duration: '3-6 months',
+                    deliverables: 'Bitcoin Strategy Document, Implementation Roadmap, Risk Assessment, Team Training',
+                    investment: '$25,000 - $100,000'
+                },
+                development: {
+                    duration: '4-12 months',
+                    deliverables: 'Custom Bitcoin Application, API Integration, Testing Suite, Documentation',
+                    investment: '$50,000 - $500,000'
+                },
+                audit: {
+                    duration: '2-4 weeks',
+                    deliverables: 'Security Assessment Report, Vulnerability Analysis, Remediation Plan, Compliance Review',
+                    investment: '$15,000 - $75,000'
+                },
+                training: {
+                    duration: '1-4 weeks',
+                    deliverables: 'Custom Curriculum, Interactive Workshops, Certification Program, Ongoing Support',
+                    investment: '$10,000 - $50,000'
+                }
+            };
+            
+            const proposal = proposals[service] || proposals.consulting;
+            
+            alert(`📊 Instant Proposal Generated!\n\n💼 Service: ${service.charAt(0).toUpperCase() + service.slice(1)}\n⏱️ Duration: ${proposal.duration}\n📦 Deliverables: ${proposal.deliverables}\n💰 Investment: ${proposal.investment}\n\nProposal ID: #BTCSA${Date.now()}\n\nThis preliminary proposal would include detailed scope, timeline, team assignments, and payment terms. Contact us to refine and formalize this proposal.`);
+        }
+        
+        function viewCase(caseType) {
+            const cases = {
+                fintech: "FinTech Bitcoin Integration: Led the complete Bitcoin treasury and payment integration for a major financial institution. Implemented multi-signature custody, regulatory compliance framework, and real-time risk management systems.",
+                ecommerce: "E-commerce Lightning Network: Developed high-performance Lightning Network payment system processing 10,000+ daily transactions with sub-second settlement times and minimal fees for global e-commerce platform.",
+                enterprise: "Enterprise Bitcoin Training: Delivered comprehensive Bitcoin education program for Fortune 500 company, training 500+ employees across technical, legal, and executive teams with 95% satisfaction rate.",
+                security: "Multi-Sig Wallet Security: Designed and audited enterprise-grade Bitcoin custody solution securing $100M+ in assets with zero security incidents and 24/7 monitoring infrastructure."
+            };
+            
+            alert(`${cases[caseType]}\n\nThis would open a detailed case study with technical specifications, implementation challenges, results achieved, and client testimonials.`);
+        }
+    </script>
+    <script src="../global-banners.js"></script>
 </body>
 </html>

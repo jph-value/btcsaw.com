@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BTCSA Domain - Coming Soon</title>
+    <title>BTCSA.life - Bitcoin Lifestyle & Wellness</title>
     <style>
         * {
             margin: 0;
@@ -13,33 +13,43 @@
         
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 30%, #fecfef 70%, #f093fb 100%);
             color: white;
             min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            margin: 0;
         }
         
         .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .hero {
             text-align: center;
-            max-width: 600px;
-            padding: 40px;
-            background: rgba(255, 255, 255, 0.1);
+            padding: 80px 20px;
+            background: rgba(0, 0, 0, 0.4);
             backdrop-filter: blur(20px);
             border-radius: 25px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            margin: 40px 0;
+            border: 1px solid rgba(255, 255, 255, 0.3);
         }
         
         .logo {
-            font-size: 4rem;
+            font-size: 5rem;
             margin-bottom: 20px;
+            animation: glow 3s ease-in-out infinite alternate;
+        }
+        
+        @keyframes glow {
+            from { text-shadow: 0 0 20px rgba(255, 255, 255, 0.5); }
+            to { text-shadow: 0 0 30px rgba(255, 255, 255, 0.8), 0 0 40px rgba(240, 147, 251, 0.5); }
         }
         
         h1 {
-            font-size: 3rem;
+            font-size: 3.5rem;
             margin-bottom: 20px;
-            background: linear-gradient(45deg, #f7931a, #ffb347);
+            background: linear-gradient(45deg, #ff9a9e, #fecfef, #f093fb);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -70,31 +80,441 @@
             box-shadow: 0 10px 25px rgba(247, 147, 26, 0.3);
         }
         
-        .coming-soon {
-            background: rgba(247, 147, 26, 0.1);
+        .wellness-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 60px 0;
+        }
+        
+        .wellness-card {
+            background: rgba(0, 0, 0, 0.4);
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .wellness-card:hover {
+            transform: translateY(-10px);
+            background: rgba(0, 0, 0, 0.6);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+        
+        .wellness-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+        
+        .habit-tracker {
+            background: rgba(240, 147, 251, 0.1);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 40px 0;
+        }
+        
+        .habits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .habit-item {
+            background: rgba(0, 0, 0, 0.4);
+            border-radius: 15px;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .habit-checkbox {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .habit-checkbox.checked {
+            background: linear-gradient(45deg, #f093fb, #ff9a9e);
+            border-color: #f093fb;
+        }
+        
+        .wellness-calculator {
+            background: rgba(255, 154, 158, 0.1);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 40px 0;
+        }
+        
+        .calc-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .calc-field {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .calc-field label {
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        
+        .calc-field input, .calc-field select {
+            padding: 12px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            background: rgba(0, 0, 0, 0.4);
+            color: white;
+            font-size: 14px;
+        }
+        
+        .calc-field input::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+        
+        .wellness-results {
+            background: rgba(0, 0, 0, 0.4);
             border-radius: 15px;
             padding: 30px;
             margin: 30px 0;
+            border-left: 4px solid #f093fb;
+        }
+        
+        .result-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 15px 0;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .result-score {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #f093fb;
+        }
+        
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            .wellness-features { grid-template-columns: 1fr; }
+            .habits-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
-    <!-- Disclaimer Banner -->
-    <div style="background: linear-gradient(135deg, #ff6b35, #f7931a); color: white; text-align: center; padding: 8px 0; font-size: 14px; font-weight: 500; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
-        ⚠️ PRESENTATION ONLY: No functional products or services are currently available. This is a conceptual showcase.
-    </div>
+    <!-- Banners will be injected by global-banners.js -->
 
     <div class="container">
-        <div class="logo">🚀</div>
-        <h1>Coming Soon</h1>
-        <p class="subtitle">This BTCSA domain showcase is under development</p>
-        
-        <div class="coming-soon">
-            <h3 style="color: #f7931a; margin-bottom: 15px;">Interactive Showcase In Progress</h3>
-            <p>We're building an amazing interactive experience for this domain. Check back soon to see the full potential of this Bitcoin service platform.</p>
+        <div class="hero">
+            <div class="logo">🌱</div>
+            <h1>BTCSA.life</h1>
+            <p class="subtitle">Bitcoin Lifestyle & Wellness Platform<br>Balance your Bitcoin journey with health, mindfulness, and personal growth</p>
+            
+            <a href="#wellness" class="cta-button">Start Wellness Journey</a>
+            <a href="/" class="back-button">← Back to Portfolio</a>
+        </div>
+
+        <div class="wellness-features" id="wellness">
+            <div class="wellness-card" onclick="exploreWellness('mindfulness')">
+                <span class="wellness-icon">🧘</span>
+                <h3>Bitcoin Mindfulness</h3>
+                <p>Stay centered during market volatility with meditation and mindfulness practices</p>
+                <ul style="text-align: left; margin-top: 15px;">
+                    <li>Market stress meditation</li>
+                    <li>HODL mindfulness sessions</li>
+                    <li>Emotional regulation techniques</li>
+                    <li>Gratitude practices</li>
+                </ul>
+            </div>
+            
+            <div class="wellness-card" onclick="exploreWellness('fitness')">
+                <span class="wellness-icon">🏃</span>
+                <h3>Crypto Fitness</h3>
+                <p>Maintain physical health while building your Bitcoin portfolio</p>
+                <ul style="text-align: left; margin-top: 15px;">
+                    <li>Desk workout routines</li>
+                    <li>Trading break exercises</li>
+                    <li>Posture improvement</li>
+                    <li>Energy boosting activities</li>
+                </ul>
+            </div>
+            
+            <div class="wellness-card" onclick="exploreWellness('nutrition')">
+                <span class="wellness-icon">🥗</span>
+                <h3>Brain Food</h3>
+                <p>Optimize your nutrition for peak Bitcoin decision-making performance</p>
+                <ul style="text-align: left; margin-top: 15px;">
+                    <li>Cognitive enhancement foods</li>
+                    <li>Stress-reducing nutrients</li>
+                    <li>Energy-sustaining meals</li>
+                    <li>Hydration tracking</li>
+                </ul>
+            </div>
+            
+            <div class="wellness-card" onclick="exploreWellness('sleep')">
+                <span class="wellness-icon">😴</span>
+                <h3>Sleep Optimization</h3>
+                <p>Improve sleep quality despite global Bitcoin markets never sleeping</p>
+                <ul style="text-align: left; margin-top: 15px;">
+                    <li>Sleep hygiene for traders</li>
+                    <li>Blue light management</li>
+                    <li>Relaxation techniques</li>
+                    <li>Dream journaling</li>
+                </ul>
+            </div>
         </div>
         
-        <a href="/" class="back-button">← Back to Portfolio</a>
+        <div class="habit-tracker">
+            <h2>✅ Daily Bitcoin Wellness Habits</h2>
+            <p>Track your daily wellness habits to maintain balance in your Bitcoin journey</p>
+            
+            <div class="habits-grid">
+                <div class="habit-item">
+                    <span>🧘 Morning meditation (10 min)</span>
+                    <div class="habit-checkbox" onclick="toggleHabit(this)"></div>
+                </div>
+                
+                <div class="habit-item">
+                    <span>📱 Check Bitcoin price mindfully</span>
+                    <div class="habit-checkbox" onclick="toggleHabit(this)"></div>
+                </div>
+                
+                <div class="habit-item">
+                    <span>💧 Drink 8 glasses of water</span>
+                    <div class="habit-checkbox" onclick="toggleHabit(this)"></div>
+                </div>
+                
+                <div class="habit-item">
+                    <span>🏃 30 minutes of movement</span>
+                    <div class="habit-checkbox" onclick="toggleHabit(this)"></div>
+                </div>
+                
+                <div class="habit-item">
+                    <span>🥗 Eat brain-healthy foods</span>
+                    <div class="habit-checkbox" onclick="toggleHabit(this)"></div>
+                </div>
+                
+                <div class="habit-item">
+                    <span>📚 Read Bitcoin education content</span>
+                    <div class="habit-checkbox" onclick="toggleHabit(this)"></div>
+                </div>
+                
+                <div class="habit-item">
+                    <span>😴 7+ hours quality sleep</span>
+                    <div class="habit-checkbox" onclick="toggleHabit(this)"></div>
+                </div>
+                
+                <div class="habit-item">
+                    <span>🙏 Gratitude practice</span>
+                    <div class="habit-checkbox" onclick="toggleHabit(this)"></div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 30px;">
+                <button class="cta-button" onclick="resetHabits()">🔄 Reset Daily Habits</button>
+                <button class="cta-button" onclick="saveProgress()">💾 Save Progress</button>
+            </div>
+        </div>
+        
+        <div class="wellness-calculator">
+            <h2>📈 Bitcoin Wellness Score Calculator</h2>
+            <p>Assess your overall wellness while navigating the Bitcoin ecosystem</p>
+            
+            <div class="calc-row">
+                <div class="calc-field">
+                    <label>Daily Screen Time (hours)</label>
+                    <input type="number" id="screenTime" placeholder="8" oninput="calculateWellness()">
+                </div>
+                
+                <div class="calc-field">
+                    <label>Sleep Quality (1-10)</label>
+                    <input type="number" id="sleepQuality" placeholder="7" min="1" max="10" oninput="calculateWellness()">
+                </div>
+                
+                <div class="calc-field">
+                    <label>Stress Level (1-10)</label>
+                    <input type="number" id="stressLevel" placeholder="5" min="1" max="10" oninput="calculateWellness()">
+                </div>
+                
+                <div class="calc-field">
+                    <label>Exercise Frequency</label>
+                    <select id="exerciseFreq" onchange="calculateWellness()">
+                        <option value="daily">Daily</option>
+                        <option value="frequent">4-6 times/week</option>
+                        <option value="moderate">2-3 times/week</option>
+                        <option value="occasional">1 time/week</option>
+                        <option value="rarely">Rarely</option>
+                    </select>
+                </div>
+                
+                <div class="calc-field">
+                    <label>Bitcoin Portfolio Stress</label>
+                    <select id="portfolioStress" onchange="calculateWellness()">
+                        <option value="low">Low - I HODL calmly</option>
+                        <option value="moderate">Moderate - Some anxiety</option>
+                        <option value="high">High - Constant worry</option>
+                        <option value="extreme">Extreme - Can't sleep</option>
+                    </select>
+                </div>
+                
+                <div class="calc-field">
+                    <label>Social Connection</label>
+                    <select id="socialConnection" onchange="calculateWellness()">
+                        <option value="strong">Strong community ties</option>
+                        <option value="moderate">Some connections</option>
+                        <option value="limited">Limited social life</option>
+                        <option value="isolated">Feeling isolated</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="wellness-results" id="wellnessResults">
+                <h4>🌱 Your Bitcoin Wellness Assessment</h4>
+                
+                <div class="result-item">
+                    <span>Overall Wellness Score:</span>
+                    <span class="result-score" id="overallScore">0/100</span>
+                </div>
+                
+                <div class="result-item">
+                    <span>Physical Health:</span>
+                    <span class="result-score" id="physicalHealth">0/100</span>
+                </div>
+                
+                <div class="result-item">
+                    <span>Mental Wellbeing:</span>
+                    <span class="result-score" id="mentalWellbeing">0/100</span>
+                </div>
+                
+                <div class="result-item">
+                    <span>Bitcoin Balance:</span>
+                    <span class="result-score" id="bitcoinBalance">0/100</span>
+                </div>
+                
+                <div class="result-item">
+                    <span>Recommended Focus:</span>
+                    <span class="result-score" id="recommendation">Complete assessment</span>
+                </div>
+            </div>
+            
+            <button class="cta-button" onclick="generateWellnessPlan()">🌱 Generate Personalized Wellness Plan</button>
+        </div>
     </div>
+
+    <script>
+        function exploreWellness(category) {
+            const categories = {
+                mindfulness: "Bitcoin Mindfulness: Learn to stay centered and make rational decisions during market volatility. Our guided meditations help you maintain emotional balance while HODLing through any storm.",
+                fitness: "Crypto Fitness: Maintain your physical health while building wealth. Desk exercises, posture corrections, and energy-boosting workouts designed for the Bitcoin lifestyle.",
+                nutrition: "Brain Food: Optimize your nutrition for peak cognitive performance. Learn which foods enhance decision-making, reduce stress, and sustain energy for long trading sessions.",
+                sleep: "Sleep Optimization: Master the art of quality sleep despite 24/7 global markets. Blue light management, relaxation techniques, and sleep hygiene for Bitcoin enthusiasts."
+            };
+            
+            alert(`${categories[category]}\n\nThis would open a comprehensive wellness program with guided content, tracking tools, and personalized recommendations.`);
+        }
+        
+        function toggleHabit(checkbox) {
+            checkbox.classList.toggle('checked');
+            if (checkbox.classList.contains('checked')) {
+                checkbox.innerHTML = '✓';
+            } else {
+                checkbox.innerHTML = '';
+            }
+            updateHabitProgress();
+        }
+        
+        function updateHabitProgress() {
+            const checkboxes = document.querySelectorAll('.habit-checkbox');
+            const completed = document.querySelectorAll('.habit-checkbox.checked').length;
+            const total = checkboxes.length;
+            const percentage = Math.round((completed / total) * 100);
+            
+            // Update progress display (could add a progress bar here)
+            console.log(`Habits completed: ${completed}/${total} (${percentage}%)`);
+        }
+        
+        function resetHabits() {
+            document.querySelectorAll('.habit-checkbox').forEach(checkbox => {
+                checkbox.classList.remove('checked');
+                checkbox.innerHTML = '';
+            });
+            updateHabitProgress();
+        }
+        
+        function saveProgress() {
+            const completed = document.querySelectorAll('.habit-checkbox.checked').length;
+            alert(`💾 Progress Saved!\n\n✅ Habits completed today: ${completed}/8\n🎆 Keep up the great work!\n\nThis would save your daily progress and contribute to your long-term wellness tracking and insights.`);
+        }
+        
+        function calculateWellness() {
+            const screenTime = parseFloat(document.getElementById('screenTime').value) || 8;
+            const sleepQuality = parseFloat(document.getElementById('sleepQuality').value) || 7;
+            const stressLevel = parseFloat(document.getElementById('stressLevel').value) || 5;
+            const exerciseFreq = document.getElementById('exerciseFreq').value;
+            const portfolioStress = document.getElementById('portfolioStress').value;
+            const socialConnection = document.getElementById('socialConnection').value;
+            
+            // Calculate scores (simplified algorithm)
+            let physicalScore = 100;
+            physicalScore -= Math.max(0, (screenTime - 8) * 5); // Penalty for excessive screen time
+            physicalScore += (sleepQuality - 5) * 8; // Sleep quality impact
+            
+            const exerciseScores = { daily: 100, frequent: 80, moderate: 60, occasional: 40, rarely: 20 };
+            physicalScore = (physicalScore + exerciseScores[exerciseFreq]) / 2;
+            
+            let mentalScore = 100;
+            mentalScore -= (stressLevel - 1) * 10; // Stress penalty
+            
+            const socialScores = { strong: 100, moderate: 75, limited: 50, isolated: 25 };
+            mentalScore = (mentalScore + socialScores[socialConnection]) / 2;
+            
+            let bitcoinScore = 100;
+            const portfolioScores = { low: 100, moderate: 70, high: 40, extreme: 10 };
+            bitcoinScore = portfolioScores[portfolioStress];
+            
+            const overallScore = Math.round((physicalScore + mentalScore + bitcoinScore) / 3);
+            
+            // Update display
+            document.getElementById('overallScore').textContent = `${Math.max(0, Math.min(100, overallScore))}/100`;
+            document.getElementById('physicalHealth').textContent = `${Math.max(0, Math.min(100, Math.round(physicalScore)))}/100`;
+            document.getElementById('mentalWellbeing').textContent = `${Math.max(0, Math.min(100, Math.round(mentalScore)))}/100`;
+            document.getElementById('bitcoinBalance').textContent = `${Math.max(0, Math.min(100, Math.round(bitcoinScore)))}/100`;
+            
+            // Recommendation
+            let recommendation = "Excellent balance!";
+            if (overallScore < 30) recommendation = "Focus on stress management";
+            else if (overallScore < 50) recommendation = "Improve sleep & exercise";
+            else if (overallScore < 70) recommendation = "Work on mindfulness";
+            
+            document.getElementById('recommendation').textContent = recommendation;
+        }
+        
+        function generateWellnessPlan() {
+            const overallScore = document.getElementById('overallScore').textContent;
+            const recommendation = document.getElementById('recommendation').textContent;
+            
+            alert(`🌱 Personalized Bitcoin Wellness Plan Generated!\n\n📈 Current Score: ${overallScore}\n🎯 Focus Area: ${recommendation}\n\n✅ Your plan includes:\n• Daily mindfulness routine\n• Customized exercise schedule\n• Nutrition recommendations\n• Sleep optimization tips\n• Stress management techniques\n• Bitcoin balance strategies\n\nPlan ID: #BTCSA${Date.now()}\n\nThis would create a comprehensive, personalized wellness program tailored to your Bitcoin lifestyle.`);
+        }
+        
+        // Initialize calculator
+        document.addEventListener('DOMContentLoaded', calculateWellness);
+    </script>
+    <script src="../global-banners.js"></script>
 </body>
 </html>
