@@ -14,119 +14,119 @@
 # Domain-specific redirects - each BTCSA domain serves its own content
 [[redirects]]
   from = "/"
-  to = "/cc/"
+  to = "/cc/index.html"
   status = 200
   force = true
   conditions = {Host = ["btcsa.cc"]}
 
 [[redirects]]
   from = "/"
-  to = "/email/"
+  to = "/email/index.html"
   status = 200
   force = true
   conditions = {Host = ["btcsa.email"]}
 
 [[redirects]]
   from = "/"
-  to = "/info/"
+  to = "/info/index.html"
   status = 200
   force = true
   conditions = {Host = ["btcsa.info"]}
 
 [[redirects]]
   from = "/"
-  to = "/life/"
+  to = "/life/index.html"
   status = 200
   force = true
   conditions = {Host = ["btcsa.life"]}
 
 [[redirects]]
   from = "/"
-  to = "/me/"
+  to = "/me/index.html"
   status = 200
   force = true
   conditions = {Host = ["btcsa.me"]}
 
 [[redirects]]
   from = "/"
-  to = "/biz/"
+  to = "/biz/index.html"
   status = 200
   force = true
   conditions = {Host = ["btcsa.biz"]}
 
 [[redirects]]
   from = "/"
-  to = "/world/"
+  to = "/world/index.html"
   status = 200
   force = true
   conditions = {Host = ["btcsa.world"]}
 
 [[redirects]]
   from = "/"
-  to = "/vip/"
+  to = "/vip/index.html"
   status = 200
   force = true
   conditions = {Host = ["btcsa.vip"]}
 
 [[redirects]]
   from = "/"
-  to = "/services/"
+  to = "/services/index.html"
   status = 200
   force = true
   conditions = {Host = ["btcsa.services"]}
 
 [[redirects]]
   from = "/"
-  to = "/agency/"
+  to = "/agency/index.html"
   status = 200
   force = true
   conditions = {Host = ["btcsa.agency"]}
 
 [[redirects]]
   from = "/"
-  to = "/shop/"
+  to = "/shop/index.html"
   status = 200
   force = true
   conditions = {Host = ["btcsa.shop"]}
 
 [[redirects]]
   from = "/"
-  to = "/store/"
+  to = "/store/index.html"
   status = 200
   force = true
   conditions = {Host = ["btcsa.store"]}
 
 [[redirects]]
   from = "/"
-  to = "/online/"
+  to = "/online/index.html"
   status = 200
   force = true
   conditions = {Host = ["btcsa.online"]}
 
 [[redirects]]
   from = "/"
-  to = "/pro/"
+  to = "/pro/index.html"
   status = 200
   force = true
   conditions = {Host = ["btcsa.pro"]}
 
 [[redirects]]
   from = "/"
-  to = "/club/"
+  to = "/club/index.html"
   status = 200
   force = true
   conditions = {Host = ["btcsa.club"]}
 
 [[redirects]]
   from = "/"
-  to = "/art/"
+  to = "/art/index.html"
   status = 200
   force = true
   conditions = {Host = ["btcsa.art"]}
 
 [[redirects]]
   from = "/"
-  to = "/xyz/"
+  to = "/xyz/index.html"
   status = 200
   force = true
   conditions = {Host = ["btcsa.xyz"]}

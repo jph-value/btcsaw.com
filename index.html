@@ -647,48 +647,7 @@
             </p>
     </footer>
     
-    <script>
-        // Domain-specific routing - robust implementation
-        (function() {
-            const hostname = window.location.hostname.toLowerCase();
-            const pathname = window.location.pathname;
-            
-            const domainRoutes = {
-                'btcsa.cc': '/cc/',
-                'btcsa.email': '/email/',
-                'btcsa.info': '/info/',
-                'btcsa.life': '/life/',
-                'btcsa.me': '/me/',
-                'btcsa.biz': '/biz/',
-                'btcsa.world': '/world/',
-                'btcsa.vip': '/vip/',
-                'btcsa.services': '/services/',
-                'btcsa.agency': '/agency/',
-                'btcsa.shop': '/shop/',
-                'btcsa.store': '/store/',
-                'btcsa.online': '/online/',
-                'btcsa.pro': '/pro/',
-                'btcsa.club': '/club/',
-                'btcsa.art': '/art/',
-                'btcsa.xyz': '/xyz/'
-            };
-            
-            // Only redirect if:
-            // 1. We're on a BTCSA domain
-            // 2. We're at the root path (/)
-            // 3. We haven't already redirected (prevent loops)
-            if (domainRoutes[hostname] && 
-                pathname === '/' && 
-                !sessionStorage.getItem('btcsa_redirected_' + hostname)) {
-                
-                // Mark as redirected to prevent loops
-                sessionStorage.setItem('btcsa_redirected_' + hostname, 'true');
-                
-                // Use replace to avoid back button issues
-                window.location.replace(domainRoutes[hostname]);
-            }
-        })();
-    </script>
+    <!-- Domain routing handled by netlify.toml redirects -->
     <script src="script.js"></script>
     <script src="global-banners.js"></script>
 </body>
