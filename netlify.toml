@@ -11,10 +11,8 @@
   to = "/.netlify/functions/:splat"
   status = 200
 
-# Custom domain redirects for BTCSA subdomains
-# These will work when you configure DNS to point subdomains to Netlify
-
-# BTCSA domain routing - serve content directly without external redirects
+# BTCSA domain routing - each domain serves its specific content
+# Add these domains as "Domain aliases" in Netlify dashboard
 [[redirects]]
   from = "https://btcsa.cc/*"
   to = "/cc/:splat"
