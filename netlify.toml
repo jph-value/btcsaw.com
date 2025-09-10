@@ -5,6 +5,11 @@
 [functions]
   directory = "netlify/functions"
 
+# Edge function registration
+[[edge_functions]]
+  function = "host-router"
+  path = "/*"
+
 # API redirects
 [[redirects]]
   from = "/api/*"

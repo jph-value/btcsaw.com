@@ -30,7 +30,15 @@
           };
           var target = map[host];
           if (target && path !== target) {
-            location.replace(target);
+            // prefetch target to reduce stutter
+            try {
+              var link = document.createElement('link');
+              link.rel = 'prefetch';
+              link.href = target;
+              document.head.appendChild(link);
+              // small timeout/microtask before swap
+              setTimeout(function() { location.replace(target); }, 0);
+            } catch(_) { location.replace(target); }
           }
         } catch (e) { /* no-op */ }
       })();
